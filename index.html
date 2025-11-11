@@ -188,7 +188,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <!-- <section class="section">
       <div class="grid two-cols">
         <div class="card">
           <h3 style="margin:0 0 12px">Timeline</h3>
@@ -222,7 +222,59 @@
           <p>Ahora toca andar camino y seguir disfrutando del proceso.</p>
         </aside>
       </div>
+    </section> -->
+
+    <section id="learning" class="section container">
+      <h3 class="section-title" style="margin:4px 0 2px;">Aprendizaje &amp; Trayectoria</h3>
+      <p class="section-subtitle" style="margin:0;font-size:0.85rem;color:var(--muted)">Breve paso por lo que va cayendo en mis manos.</p>
+      <h6></h6>
+
+      <!-- Controles -->
+      <div class="learning-controls">
+        <div class="chips" role="tablist" aria-label="Filtrar por tema">
+          <button class="chip active" data-tag="Todos" role="tab" aria-selected="true">Todos</button>
+          <button class="chip" data-tag="Java" role="tab" aria-selected="false">Java</button>
+          <button class="chip" data-tag="SQL" role="tab" aria-selected="false">SQL</button>
+          <button class="chip" data-tag="Calidad" role="tab" aria-selected="false">Diseño</button>
+          <button class="chip" data-tag="Comunicación" role="tab" aria-selected="false">Comunicación</button>
+          <button class="chip" data-tag="Productividad" role="tab" aria-selected="false">Productividad</button>
+        </div>
+
+        <div class="controls-right">
+          <button id="toggle-ideas" class="toggle" type="button" aria-pressed="true">
+            Ideas clave: <span class="toggle-state">ON</span>
+          </button>
+
+          <label class="sorter">
+            <span class="sr-only">Ordenar por</span>
+            <select id="sort-select" aria-label="Ordenar por">
+              <option value="anio" selected>Año</option>
+              <option value="impacto">Impacto</option>
+              <option value="tema">Tema</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- Leídos -->
+      <section aria-labelledby="read-title" class="learning-block">
+        <h4 id="read-title" class="block-title">Leídos</h4>
+        <div id="read-grid" class="grid-cards"></div>
+      </section>
+
+      <!-- Eventos -->
+      <section aria-labelledby="events-title" class="learning-block">
+        <h4 id="events-title" class="block-title">Eventos</h4>
+        <div id="events-list" class="list-events"></div>
+      </section>
+
+      <!-- En la recámara -->
+      <section aria-labelledby="queue-title" class="learning-block">
+        <h4 id="queue-title" class="block-title">En la recámara</h4>
+        <div id="queue-list" class="list-queue"></div>
+      </section>
     </section>
+
 
     <section id="contacto" class="section card">
       <h3 style="margin-top:0">Contacto</h3>

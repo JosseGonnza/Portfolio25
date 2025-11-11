@@ -109,6 +109,104 @@ footer{ border-top:1px solid var(--border); padding:24px; color:var(--muted) }
 #scrollTopBtn.show{ opacity:1; pointer-events:auto; transform:translateY(0) }
 #scrollTopBtn:hover{ transform:translateY(-3px) }
 
+/* === Learning Section === */
+#learning { margin-top: 56px; }
+.learning-head { margin-bottom: 16px; }
+.learning-head .section-title { margin: 0 0 6px 0; }
+.learning-head .section-subtitle { color: var(--muted); margin: 0; }
+
+.learning-controls {
+  display: flex; gap: 12px; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; margin: 16px 0 20px;
+}
+
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  border: 1px solid var(--border); background: var(--bg-soft); color: var(--txt);
+  padding: 6px 10px; border-radius: 999px; cursor: pointer; font: inherit;
+  transition: transform .15s, background .15s, border-color .15s;
+}
+.chip:hover { transform: translateY(-1px); border-color: var(--brand); }
+.chip.active { background: color-mix(in oklab, var(--brand) 25%, var(--bg-soft) 75%); border-color: var(--brand); }
+
+.controls-right { display: flex; gap: 10px; align-items: center; }
+
+.toggle {
+  border: 1px solid var(--border); background: var(--card); padding: 6px 10px; border-radius: 10px;
+  box-shadow: var(--shadow); cursor: pointer; font: inherit; color: var(--txt);
+}
+.toggle[aria-pressed="true"] { outline: 2px solid var(--brand); }
+
+.sorter select {
+  background: var(--bg-soft); color: var(--txt); border: 1px solid var(--border);
+  padding: 6px 10px; border-radius: 10px;
+}
+
+.learning-block { margin: 18px 0 28px; }
+.block-title { margin: 0 0 12px 0; color: var(--brand); font-weight: 600; }
+
+/* Cards grid */
+.grid-cards {
+  display: grid; gap: 12px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.card-book {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 14px; display: grid; grid-template-columns: 48px 1fr; gap: 12px;
+  transition: transform .15s, border-color .15s;
+}
+.card-book:hover { transform: translateY(-2px); border-color: var(--brand); }
+
+.cover {
+  width: 48px; height: 48px; border-radius: 8px; display: grid; place-items: center;
+  background: color-mix(in oklab, var(--brand) 22%, var(--bg-soft) 78%);
+  font-weight: 700;
+}
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.meta { display: grid; gap: 4px; }
+.title { font-weight: 600; line-height: 1.25; }
+.byline { color: var(--muted); font-size: .95rem; }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.badge {
+  font-size: .8rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--brand) 12%, var(--bg-soft) 88%);
+}
+.idea { color: var(--muted); margin-top: 6px; font-size: .95rem; }
+.hide-ideas .idea { display: none; }
+
+/* Eventos */
+.list-events { display: grid; gap: 12px; }
+.event {
+  display: grid; grid-template-columns: 56px 1fr; gap: 12px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px;
+}
+.event .logo {
+  width: 56px; height: 56px; border-radius: 10px; display: grid; place-items: center;
+  background: color-mix(in oklab, var(--brand) 20%, var(--bg-soft) 80%); font-weight: 700;
+}
+.event .headline { font-weight: 600; }
+.event .line { color: var(--muted); }
+.event .takeaway { margin-top: 6px; color: var(--txt); }
+
+/* Queue */
+.list-queue { display: grid; gap: 8px; }
+.queue-item {
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px;
+}
+.status { font-size: .85rem; color: var(--muted); }
+.progressbar {
+  height: 8px; border-radius: 999px; background: #0004; overflow: hidden; margin-top: 6px;
+}
+.progressbar > i { display: block; height: 100%; width: 0%; background: var(--brand); }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; clip: rect(0 0 0 0); overflow: hidden; }
+
+
 
 @media (max-width: 900px){
   /* Contenedor más compacto */
@@ -131,6 +229,9 @@ footer{ border-top:1px solid var(--border); padding:24px; color:var(--muted) }
     grid-column:1; grid-row:2;
     width:100%; justify-self:center; margin-top:8px;
   }
+
+  @media (min-width: 700px) { .grid-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px){ .grid-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
   /* Grids a 1 columna real */
   .grid.projects{ grid-template-columns:1fr }
