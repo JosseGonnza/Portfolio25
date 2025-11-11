@@ -79,15 +79,83 @@ header{
 .project .tags{ display:flex; gap:8px; flex-wrap:wrap }
 .chip{ font-size:12px; background:color-mix(in oklab,var(--brand) 18%, transparent); border:1px solid var(--border); padding:4px 8px; border-radius:999px }
 
+/* === Skills compact === */
+.skills-grid{
+  display:grid; gap:12px;
+  grid-template-columns:repeat(1,minmax(0,1fr));
+}
+@media (min-width:700px){ .skills-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:1024px){ .skills-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+
+.skill-card{
+  background:var(--card); border:1px solid var(--border); border-radius:14px; padding:14px;
+  display:flex; flex-direction:column; gap:8px; transition:border-color .15s, transform .15s;
+}
+.skill-card:hover{ border-color:var(--brand); transform:translateY(-1px); }
+
+.skill-head{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+}
+.skill-name{ font-weight:600; }
+.skill-level{
+  display:flex; gap:4px;
+}
+
+/* === Barra de nivel compacta === */
+.skill-level{
+  position: relative;
+  width: 100px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand-2);
+  overflow: hidden;
+}
+
+.skill-level::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  width:calc((var(--level,1)/5)*100%);
+  background: color-mix(in oklab, var(--brand) 40%, var(--brand) 60%);
+  border-radius:999px;
+}
+
+
+.skill-card[data-level="1"] .skill-level i:nth-child(-n+1){ opacity:1; }
+.skill-card[data-level="2"] .skill-level i:nth-child(-n+2){ opacity:1; }
+.skill-card[data-level="3"] .skill-level i:nth-child(-n+3){ opacity:1; }
+.skill-card[data-level="4"] .skill-level i:nth-child(-n+4){ opacity:1; }
+.skill-card[data-level="5"] .skill-level i:nth-child(-n+5){ opacity:1; }
+
+
+.tags-mini{ display:flex; flex-wrap:wrap; gap:6px; }
+.tag-mini{
+  font-size:.8rem; line-height:1; padding:4px 8px; border-radius:999px;
+  border:1px solid var(--border);
+  background:color-mix(in oklab, var(--brand) 10%, var(--bg-soft) 90%);
+  color:var(--txt); opacity:.9;
+}
+.tag-mini:hover{ opacity:1; border-color:var(--brand); }
+.tag-mini[data-kind="core"]{ background:color-mix(in oklab, var(--brand) 18%, var(--bg-soft) 82%); }
+.tag-mini[data-kind="test"]{ background:color-mix(in oklab, var(--brand) 10%, #00808020 90%); }
+.tag-mini[data-kind="db"]{ background:color-mix(in oklab, var(--brand) 10%, #33415520 90%); }
+.tag-mini[data-kind="tool"]{ background:color-mix(in oklab, var(--brand) 10%, #6b728020 90%); }
+
+.skill-foot{
+  margin-top:4px; color:var(--muted); font-size:.9rem;
+  display:flex; gap:8px; flex-wrap:wrap;
+}
+
+
 /* Skills / barras */
 .skill{ padding:14px; border:1px solid var(--border); border-radius:14px; background:var(--bg-soft) }
 .bar{ height:8px; background:var(--track); border-radius:999px; overflow:hidden; border:1px solid var(--track-border) }
 .bar > span{ display:block; height:100%; background:linear-gradient(135deg,var(--brand),var(--brand-2)); opacity:.9 }
 
-/* Timeline */
+/* Timeline 
 .timeline{ display:grid; gap:12px }
 .item{ border-left:2px solid var(--brand); padding:8px 12px; margin-left:8px }
-.item time{ font-size:12px; color:var(--muted) }
+.item time{ font-size:12px; color:var(--muted) } */
 
 /* Code block (estética del recuadro, no el overflow) */
 .code{

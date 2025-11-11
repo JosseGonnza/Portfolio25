@@ -23,6 +23,103 @@ document.getElementById('year').textContent = new Date().getFullYear();
       }
     });
 
+    // === Datos: tech grande + sub-tags (core/test/db/tool) ===
+const skillGroups = [
+  {
+    name: "Java",
+    level: 3,
+    summary: "Backend fuerte, OOP y patrones.",
+    tags: [
+      { label: "Java17", kind: "core" },
+      { label: "Java19", kind: "core" },
+      { label: "Java21", kind: "core" },
+      { label: "OOP", kind: "core" },
+      { label: "Colecciones/Streams", kind: "core" },
+      { label: "REST APIs", kind: "core" },
+    ]
+  },
+  {
+  name: "Spring Boot",
+  level: 2.5,
+  summary: "Agilidad e intencionalidad.",
+  tags: [
+    { label: "Spring MVC", kind: "core" },
+    { label: "Dependency Injection", kind: "core" },
+    { label: "Spring Data JPA", kind: "db" },
+  ]
+  },
+  {
+    name: "Bases de datos",
+    level: 2.5,
+    summary: "Modelado y consultas sólidas.",
+    tags: [
+    { label: "MySQL", kind: "db" },
+    { label: "H2 (InMemory)", kind: "db" },
+    { label: "DBeaver / Workbench", kind: "tool" },
+    { label: "Docker Volumes", kind: "tool" }
+    ]
+  },
+    {
+    name: "Testing",
+    level: 2,
+    summary: "TDD y dobles de test.",
+    tags: [
+      { label: "TDD", kind: "test" },
+      { label: "JUnit 5", kind: "test" },
+      { label: "Mokito", kind: "test" },
+      { label: "Test Doubles", kind: "test" }
+    ]
+  },
+{
+  name: "JetBrains IDEs",
+  level: 4.5,
+  summary: "Flujos limpios, refactors y configuraciones",
+  tags: [
+    { label: "IntelliJ IDEA", kind: "tool" },
+    { label: "Rider", kind: "tool" },
+    { label: "Live Templates", kind: "tool" },
+    { label: "Git Integration", kind: "tool" }
+  ]
+},
+  {
+    name: "Dev & Tools",
+    level: 3.5,
+    summary: "Productividad y despliegue local.",
+    tags: [
+      { label: "Git", kind: "tool" },
+      { label: "Docker", kind: "tool" },
+      { label: "Swagger/OpenAPI", kind: "tool" },
+      { label: "Notion", kind: "tool" }
+    ]
+  }
+];
+
+// === Render ===
+function renderSkills(){
+  const grid = document.getElementById("skills-grid");
+  if(!grid) return;
+
+  grid.innerHTML = skillGroups.map(g=>{
+  const dots = `<div class="skill-level" style="--level:${g.level}"></div>`;
+    const tags = g.tags.map(t =>
+      `<span class="tag-mini" data-kind="${t.kind}">${t.label}</span>`
+    ).join("");
+
+    return `
+      <article class="skill-card" data-level="${g.level}">
+        <div class="skill-head">
+          <div class="skill-name">${g.name}</div>
+          ${dots}
+        </div>
+        <div class="tags-mini">${tags}</div>
+        <div class="skill-foot">${g.summary || ""}</div>
+      </article>
+    `;
+  }).join("");
+}
+
+document.addEventListener("DOMContentLoaded", renderSkills);
+
     // === Datos base (los tuyos, ya normalizados) ===
 const readBooks = [
   {
