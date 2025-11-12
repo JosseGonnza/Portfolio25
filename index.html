@@ -1,123 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="description" content="Portfolio de desarrollador backend | Proyectos, skills, contacto" />
   <title>Jose González · Desarrollador Backend</title>
-
   <!-- Fuente -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
   <!-- Favicon / App Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="public/IconPortfolio.png">
   <link rel="icon" type="image/png" sizes="192x192" href="public/IconPortfolio.png">
   <link rel="apple-touch-icon" sizes="180x180" href="public/IconPortfolio.png">
   <link rel="manifest" href="site.webmanifest">
-
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Jose González · Desarrollador Backend" />
   <meta property="og:description" content="Java, TDD y APIs limpias. Proyectos, skills y contacto." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/IconPortfolio.png" />
+  <meta property="og:image" content="public/IconPortfolio.png" />
   <meta property="og:url" content="https://tu-dominio.dev/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Jose González · Desarrollador Backend" />
   <meta name="twitter:description" content="Portfolio de desarrollador backend | Proyectos, skills, contacto" />
-  <meta name="twitter:image" content="/IconPortfolio.png" />
-
+  <meta name="twitter:image" content="public/IconPortfolio.png" />
+  <!-- CSS -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
   <div class="bg-layer bg-glows"></div>
   <div class="bg-layer bg-lines"></div>
+
   <a class="skip-link" href="#content">Saltar al contenido</a>
+
   <header>
     <nav class="nav container">
-      <div class="brand">
-        <a href="https://github.com/JosseGonnza" target="_blank" class="logo" aria-label="Inicio">
-          <img src="public/IconPortfolio.png" alt="Logo Jose González" width="36" height="36">
-          <span class="sr-only">Jose González — Portfolio</span>
-        </a>
-      </div>
-      <div class="actions">
-        <a class="btn primary" href="https://www.dropbox.com/scl/fi/1fedhnpziu8edc1faz1ik/CV2025-JoseGonzalez.pdf?rlkey=3l2vtxa5z8ng4u0v44m4imhqv&st=tlet2d71&dl=0" download aria-label="Descargar CV en PDF">CV</a>
-        <a class="btn primary" href="#contacto">Contacto</a>
-        <button id="themeToggle" class="btn primary" aria-label="Cambiar tema" aria-pressed="false">🌙</button>
-      </div>
+      <div class="brand"> <a href="https://github.com/JosseGonnza" target="_blank" class="logo" aria-label="Inicio">
+          <img src="public/IconPortfolio.png" alt="Logo Jose González" width="36" height="36"> <span
+            class="sr-only">Jose González — Portfolio</span> </a> </div>
+      <div class="actions"> <a class="btn primary"
+          href="https://www.dropbox.com/scl/fi/1fedhnpziu8edc1faz1ik/CV2025-JoseGonzalez.pdf?rlkey=3l2vtxa5z8ng4u0v44m4imhqv&st=tlet2d71&dl=0"
+          download aria-label="Descargar CV en PDF">CV</a> <a class="btn primary" href="#contacto">Contacto</a> <button
+          id="themeToggle" class="btn primary" aria-label="Cambiar tema" aria-pressed="false">🌙</button> </div>
     </nav>
   </header>
-
   <main id="content" class="container">
+    <!-- HERO -->
     <section class="hero">
       <div>
-        <h1 class="hero-title"><span class="title-gradient">Jose González</span><span class="role">Desarrollador Backend</span></h1>
-        <p>Autodidacta por bandera, cursando Desarrollo de Aplicaciones Web y mucha hambre de aprender. Aquí muestro proyectos reales, código limpio y buenas prácticas.</p>
-        <div class="badges">
-          <span class="badge">Java · OOP · Colecciones · Streams</span>
-          <span class="badge">JUnit5 · TDD · Mockito</span>
-          <span class="badge">SQL · JDBC</span>
-          <span class="badge">Git · GitHub</span>
+        <h1 class="hero-title"> <span class="title-gradient">Jose González</span> <span class="role">Desarrollador
+            Backend</span> </h1>
+        <p>Autodidacta por bandera, cursando Desarrollo de Aplicaciones Web y mucha hambre de aprender. Aquí muestro
+          proyectos reales, código limpio y buenas prácticas.</p>
+        <div class="badges"> <span class="badge">Java · OOP · Colecciones · Streams</span> <span class="badge">JUnit5 ·
+            TDD · Mockito</span> <span class="badge">SQL · JDBC</span> <span class="badge">Git · GitHub</span> 
         </div>
-        <div class="actions mt-14">
-          <a class="btn primary" href="#proyectos">Ver proyectos</a>
-          <a class="btn social" href="https://github.com/JosseGonnza" target="_blank" rel="noreferrer noopener"><img class="github-icon" src="public/github-sign-white.png" alt="Logotipo de GitHub" width="24" height="24"></a>
-          <a class="btn social" href="https://www.linkedin.com/in/jossegonnza" target="_blank" rel="noreferrer noopener"><img class="linkedin-icon" src="public/linkedin-white.png" alt="Logotipo de LinkedIn" width="24" height="24"></a>
+        <div class="actions mt-14"> <a class="btn primary" href="#proyectos">Ver proyectos</a> 
+          <a class="btn social" href="https://github.com/JosseGonnza" target="_blank" rel="noreferrer noopener">
+            <img class="social-icon github-icon" src="public/github-sign-white.png" alt="Logotipo de GitHub" width="24" height="24">
+          </a>
+          <a class="btn social" href="https://www.linkedin.com/in/jossegonnza" target="_blank" rel="noreferrer noopener">
+            <img class="social-icon linkedin-icon" src="public/linkedin-white.png" alt="Logotipo de LinkedIn" width="24" height="24">
+          </a>
         </div>
       </div>
       <div class="card">
         <div class="code" aria-label="Código Java ejemplo">
-<pre><code>public class DailyMood {
-  public static void main(String[] args) {
-    int motivation = 100;
-    int bugs = (int)(Math.random() * 5);
+          <pre><code>public class DailyMood {
+public static void main(String[] args) {
+  int motivation = 100;
+  int bugs = (int)(Math.random() * 5);
 
-    System.out.println("🔥 Vamos con 
-    todo!");
+  System.out.println("🔥 Vamos con todo!");
 
-    while (motivation > 0 && bugs > 0) {
-      System.out.println("💻 Peleando... 
-      quedan " + bugs);
-      bugs--;
-      motivation -= 25;
-    }
+  while (motivation > 0 && bugs > 0) {
+    System.out.println("💻 Peleando... quedan " + bugs);
+    bugs--;
+    motivation -= 25;
+  }
 
-    if (bugs == 0) {
-      System.out.println("✅ Podemos con 
-      esto y con menos!");
-    } else {
-      System.out.println("😅 Necesito más 
-      café...");
-    }
+  if (bugs == 0) {
+    System.out.println("✅ Podemos con esto y con menos");
+  } else {
+    System.out.println("😅 Necesito más café...");
   }
 }
-</code></pre>
+}
+          </code></pre>
         </div>
       </div>
     </section>
 
+    <!-- PROYECTOS -->
     <section id="proyectos" class="section">
-      <h3>Proyectos</h3>
+      <h3 class="section-title">Proyectos</h3>
+      <p class="section-subtitle">Lista de PetProjects y repositorios interesantes.</p>
+      <h6></h6>
       <div class="grid projects">
         <!-- Proyecto 1 -->
         <article class="project card">
-          <div class="title">Katas: Repositorios & CodeWars</div>
+          <div class="title">Katas: Repositorios &amp; CodeWars</div>
           <div class="meta">Java · Algoritmia</div>
-          <p>Resolución de katas míticas desde FizzBuzz y PasswordValidation con TDD, hasta GildedRose con refactoring.</p>
+          <p>Resolución de katas míticas desde FizzBuzz y PasswordValidation con TDD, hasta GildedRose con refactoring.
+          </p>
           <div class="tags">
             <span class="chip">OOP</span>
             <span class="chip">Complejidad</span>
             <span class="chip">TDD</span>
           </div>
           <div class="actions mt-8">
-            <a class="btn" href="https://github.com/JosseGonnza?tab=repositories&q=&type=public&language=c%23&sort=" target="_blank" rel="noreferrer">Repo</a>
-            <a class="btn" href="https://www.codewars.com/users/JosseGonnza" target="_blank" rel="noreferrer">CodeWars</a>
+            <a class="btn" href="https://github.com/JosseGonnza?tab=repositories&q=&type=public&language=c%23&sort="
+              target="_blank" rel="noreferrer">Repo</a>
+            <a class="btn" href="https://www.codewars.com/users/JosseGonnza" target="_blank"
+              rel="noreferrer">CodeWars</a>
           </div>
         </article>
+
         <!-- Proyecto 2 -->
         <article class="project card">
           <div class="title">CoffeeShop API</div>
@@ -126,13 +129,13 @@
           <div class="tags">
             <span class="chip">Spring Boot</span>
             <span class="chip">JPA</span>
-            <span class="chip">Testcontainers</span>
           </div>
           <div class="actions mt-8">
             <a class="btn" href="https://github.com/tu-usuario/coffeeshop-api" target="_blank" rel="noreferrer">Repo</a>
             <a class="btn" href="https://swagger.io/" target="_blank" rel="noreferrer">Swagger</a>
           </div>
         </article>
+
         <!-- Proyecto 3 -->
         <article class="project card">
           <div class="title">Book CSV Library</div>
@@ -144,106 +147,35 @@
             <span class="chip">Mockito</span>
           </div>
           <div class="actions mt-8">
-            <a class="btn" href="https://github.com/tu-usuario/book-csv-library" target="_blank" rel="noreferrer">Repo</a>
-            <a class="btn" href="https://github.com/tu-usuario/book-csv-library#readme" target="_blank" rel="noreferrer">README</a>
+            <a class="btn" href="https://github.com/tu-usuario/book-csv-library" target="_blank"
+              rel="noreferrer">Repo</a>
+            <a class="btn" href="https://github.com/tu-usuario/book-csv-library#readme" target="_blank"
+              rel="noreferrer">README</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- <section id="skills" class="section">
-      <h3>Skills</h3>
-      <div class="grid skills">
-        <div class="skill">
-          <div style="display:flex;justify-content:space-between"><strong>Java</strong><span>Básico+</span></div>
-          <div class="bar" aria-label="nivel java"><span style="width:45%"></span></div>
-        </div>
-        <div class="skill">
-          <div style="display:flex;justify-content:space-between"><strong>SpringBoot</strong><span>Básico+</span></div>
-          <div class="bar"><span style="width:40%"></span></div>
-        </div>
-        <div class="skill">
-          <div style="display:flex;justify-content:space-between"><strong>TDD</strong><span>Básico+</span></div>
-          <div class="bar"><span style="width:40%"></span></div>
-        </div>
-        <div class="skill">
-          <div style="display:flex;justify-content:space-between"><strong>SQL</strong><span>Básico+</span></div>
-          <div class="bar"><span style="width:45%"></span></div>
-        </div>
-          <div class="skill">
-          <div style="display:flex;justify-content:space-between"><strong>JetBrains</strong><span>Intermedio</span></div>
-          <div class="bar"><span style="width:65%"></span></div>
-        </div>
-          <div class="skill">
-          <div style="display:flex;justify-content:space-between"><strong>Docker</strong><span>Básico</span></div>
-          <div class="bar"><span style="width:25%"></span></div>
-        </div>
-          <div class="skill">
-          <div style="display:flex;justify-content:space-between"><strong>Notion</strong><span>Avanzado</span></div>
-          <div class="bar"><span style="width:85%"></span></div>
-        </div>
-          <div class="skill">
-          <div style="display:flex;justify-content:space-between"><strong>Obsidian</strong><span>Intermedio</span></div>
-          <div class="bar"><span style="width:70%"></span></div>
-      </div>
-    </section> -->
-
-    <section id="skills" class="section container" aria-labelledby="skills-title">
-      <h3 id="skills-title" class="section-title" style="margin:4px 0 2px;">Skills</h3>
-      <p class="section-subtitle" style="margin:0;font-size:0.85rem;color:var(--muted)">Tecnologías principales y ecosistema que manejo.</p>
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <h3 class="section-title">Skills</h3>
+      <p class="section-subtitle">Tecnologías principales y ecosistema que manejo.</p>
       <h6></h6>
       <div id="skills-grid" class="skills-grid"></div>
     </section>
 
-
-    <!-- <section class="section">
-      <div class="grid two-cols">
-        <div class="card">
-          <h3 style="margin:0 0 12px">Timeline</h3>
-          <div class="timeline">
-            <div class="item">
-              <time>2025 · Actualidad</time>
-              <h4 style="margin:4px 0 2px;font-size:1rem;">Ciclo Formativo Grado Superior de Desarrollo de Aplicaciones Web.</h4>
-              <p style="margin:0;font-size:0.85rem;color:var(--muted)">Cursando...</p>
-            </div>
-            <div class="item">
-              <time>2024</time>
-              <h4 style="margin:4px 0 2px;font-size:1rem;">Inicio de katas, TDD y APIs de manera autodidacta.</h4>
-              <p style="margin:0;font-size:0.85rem;color:var(--muted)">Primeros pasos en el desarrollo de software</p>
-            </div>
-            <div class="item">
-              <time>2018 · 2025</time>
-              <h4 style="margin:4px 0 2px;font-size:1rem;">Vida culinaria con amplia experiencia en gastronomía.</h4>
-              <p style="margin:0;font-size:0.85rem;color:var(--muted)">Experiencia en distintos ámbitos y puestos de trabajo</p>
-            </div>
-              <div class="item">
-              <time>2016 · 2018</time>
-              <h4 style="margin:4px 0 2px;font-size:1rem;">Ciclo Formativo Grado Superior de Dirección de cocina.</h4>
-              <p style="margin:0;font-size:0.85rem;color:var(--muted)">Friendo corbatas y planchando huevos</p>
-            </div>
-          </div>
-        </div>
-        <aside class="card">
-          <h3 style="margin:0 0 12px">Sobre mí</h3>
-          <p style="color:var(--muted)">¡De los fogones a los hackatones! </p>
-          <p>Seriedad con humor, por favor. Desde que comencé a trabajar en las cocinas siempre creí que buscar soluciones a los problemas del día a día, en el servicio/restaurante, era lo mio. Desde que me adentré en el mundo de la programación pude confirmarlo.</p>
-          <p>Ahora toca andar camino y seguir disfrutando del proceso.</p>
-        </aside>
-      </div>
-    </section> -->
-
-    <section id="learning" class="section container">
-      <h3 class="section-title" style="margin:4px 0 2px;">Aprendizaje &amp; Trayectoria</h3>
-      <p class="section-subtitle" style="margin:0;font-size:0.85rem;color:var(--muted)">Breve paso por lo que va cayendo en mis manos.</p>
+    <!-- LEARNING -->
+    <section id="learning" class="section">
+      <h3 class="section-title">Aprendizaje &amp; Trayectoria</h3>
+      <p class="section-subtitle">Breve paso por lo que va cayendo en mis manos.</p>
       <h6></h6>
 
-      <!-- Controles -->
       <div class="learning-controls">
         <div class="chips" role="tablist" aria-label="Filtrar por tema">
           <button class="chip active" data-tag="Todos" role="tab" aria-selected="true">Todos</button>
           <button class="chip" data-tag="Java" role="tab" aria-selected="false">Java</button>
           <button class="chip" data-tag="SQL" role="tab" aria-selected="false">SQL</button>
-          <button class="chip" data-tag="Calidad" role="tab" aria-selected="false">Diseño</button>
+          <button class="chip" data-tag="Diseño" role="tab" aria-selected="false">Diseño</button>
           <button class="chip" data-tag="Comunicación" role="tab" aria-selected="false">Comunicación</button>
           <button class="chip" data-tag="Productividad" role="tab" aria-selected="false">Productividad</button>
         </div>
@@ -264,39 +196,33 @@
         </div>
       </div>
 
-      <!-- Leídos -->
       <section aria-labelledby="read-title" class="learning-block">
         <h4 id="read-title" class="block-title">Leídos</h4>
         <div id="read-grid" class="grid-cards"></div>
       </section>
 
-      <!-- Eventos -->
       <section aria-labelledby="events-title" class="learning-block">
         <h4 id="events-title" class="block-title">Eventos</h4>
         <div id="events-list" class="list-events"></div>
       </section>
 
-      <!-- En la recámara -->
       <section aria-labelledby="queue-title" class="learning-block">
         <h4 id="queue-title" class="block-title">En la recámara</h4>
         <div id="queue-list" class="list-queue"></div>
       </section>
     </section>
 
-
+    <!-- CONTACTO -->
     <section id="contacto" class="section card">
-      <h3 style="margin-top:0">Contacto</h3>
+      <h3 class="section-title">Contacto</h3>
       <p>¿Te interesa colaborar o dar feedback?</p>
-      <p><a class="btn primary" href="mailto:accion.quevedo@gmail.com" aria-label="Enviar email">Escribeme a este email</a></p>
+      <p><a class="btn primary" href="mailto:accion.quevedo@gmail.com" aria-label="Enviar email">Escríbeme a este
+          email</a></p>
     </section>
   </main>
 
-    <button id="scrollTopBtn" aria-label="Volver arriba">↑</button>
-
-  <footer class="container">
-    © <span id="year"></span> · Jose González Quevedo <span aria-hidden="true">🚀</span>
+  <footer class="container"> © <span id="year"></span> · Jose González Quevedo <span aria-hidden="true">🚀</span>
   </footer>
-  
-  <script src="js/main.js"></script>
 </body>
+
 </html>
