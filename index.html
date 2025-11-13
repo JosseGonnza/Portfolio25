@@ -49,27 +49,41 @@
           id="themeToggle" class="btn primary" aria-label="Cambiar tema" aria-pressed="false">🌙</button> </div>
     </nav>
   </header>
+  <!-- CONTENIDO -->
   <main id="content" class="container">
+
     <!-- HERO -->
-    <section class="hero">
-      <div>
-        <h1 class="hero-title"> <span class="title-gradient">Jose González</span> <span class="role">Desarrollador
-            Backend</span> </h1>
-        <p>Autodidacta por bandera, cursando Desarrollo de Aplicaciones Web y mucha hambre de aprender. Aquí muestro
-          proyectos reales, código limpio y buenas prácticas.</p>
-        <div class="badges"> <span class="badge">Java · OOP · Colecciones · Streams</span> <span class="badge">JUnit5 ·
-            TDD · Mockito</span> <span class="badge">SQL · JDBC</span> <span class="badge">Git · GitHub</span> 
+    <section class="hero hero-full hero-animate">
+      <div class="hero-main">
+        <h1 class="hero-title">
+          <span class="title-gradient">Jose González</span>
+          <span class="role">Desarrollador Backend</span>
+        </h1>
+
+        <p>
+          Autodidacta por bandera, cursando Desarrollo de Aplicaciones Web y mucha hambre de aprender.
+          Aquí muestro proyectos reales, código limpio y buenas prácticas.
+        </p>
+
+        <div class="badges">
+          <span class="badge">Java · OOP · Colecciones · Streams</span>
+          <span class="badge">JUnit5 · TDD · Mockito</span>
+          <span class="badge">SQL · JDBC</span>
+          <span class="badge">Git · GitHub</span>
         </div>
-        <div class="actions mt-14"> <a class="btn primary" href="#proyectos">Ver proyectos</a> 
-          <a class="btn social" href="https://github.com/JosseGonnza" target="_blank" rel="noreferrer noopener">
+
+        <div class="actions mt-14 hero-actions">
+          <a class="btn primary btn-real" href="#proyectos">Ver proyectos</a>
+          <a class="btn social btn-real" href="https://github.com/JosseGonnza" target="_blank">
             <img class="social-icon github-icon" src="public/github-sign-white.png" alt="Logotipo de GitHub" width="24" height="24">
           </a>
-          <a class="btn social" href="https://www.linkedin.com/in/jossegonnza" target="_blank" rel="noreferrer noopener">
+          <a class="btn social btn-real" href="https://www.linkedin.com/in/jossegonnza" target="_blank">
             <img class="social-icon linkedin-icon" src="public/linkedin-white.png" alt="Logotipo de LinkedIn" width="24" height="24">
           </a>
         </div>
       </div>
-      <div class="card">
+
+      <div class="card hero-snippet">
         <div class="code" aria-label="Código Java ejemplo">
           <pre><code>public class DailyMood {
 public static void main(String[] args) {
@@ -101,23 +115,24 @@ public static void main(String[] args) {
       <h3 class="section-title">Proyectos</h3>
       <p class="section-subtitle">Lista de PetProjects y repositorios interesantes.</p>
       <h6></h6>
+
       <div class="grid projects">
+
         <!-- Proyecto 1 -->
         <article class="project card">
-          <div class="title">Katas: Repositorios &amp; CodeWars</div>
+          <div class="title">Katas: Repositorios & CodeWars</div>
           <div class="meta">Java · Algoritmia</div>
-          <p>Resolución de katas míticas desde FizzBuzz y PasswordValidation con TDD, hasta GildedRose con refactoring.
-          </p>
+          <p>Resolución de katas míticas desde FizzBuzz con TDD, hasta GildedRose.</p>
+
           <div class="tags">
-            <span class="chip">OOP</span>
-            <span class="chip">Complejidad</span>
-            <span class="chip">TDD</span>
+            <span class="tag-mini">OOP</span>
+            <span class="tag-mini">Complejidad</span>
+            <span class="tag-mini">TDD</span>
           </div>
+
           <div class="actions mt-8">
-            <a class="btn" href="https://github.com/JosseGonnza?tab=repositories&q=&type=public&language=c%23&sort="
-              target="_blank" rel="noreferrer">Repo</a>
-            <a class="btn" href="https://www.codewars.com/users/JosseGonnza" target="_blank"
-              rel="noreferrer">CodeWars</a>
+            <a class="btn btn-real" href="https://github.com/JosseGonnza?tab=repositories" target="_blank">Repo</a>
+            <a class="btn btn-real" href="https://www.codewars.com/users/JosseGonnza" target="_blank">CodeWars</a>
           </div>
         </article>
 
@@ -125,34 +140,37 @@ public static void main(String[] args) {
         <article class="project card">
           <div class="title">CoffeeShop API</div>
           <div class="meta">Java · REST · JDBC/JPA</div>
-          <p>API sencilla con arquitectura por capas, integración con base de datos y pruebas de integración.</p>
+          <p>API con arquitectura por capas e integración a base de datos.</p>
+
           <div class="tags">
-            <span class="chip">Spring Boot</span>
-            <span class="chip">JPA</span>
+            <span class="tag-mini">Spring Boot</span>
+            <span class="tag-mini">JPA</span>
           </div>
+
           <div class="actions mt-8">
-            <a class="btn" href="https://github.com/tu-usuario/coffeeshop-api" target="_blank" rel="noreferrer">Repo</a>
-            <a class="btn" href="https://swagger.io/" target="_blank" rel="noreferrer">Swagger</a>
+            <a class="btn btn-real" href="https://github.com/tu-usuario/coffeeshop-api" target="_blank">Repo</a>
+            <a class="btn btn-real" href="https://swagger.io/" target="_blank">Swagger</a>
           </div>
         </article>
 
         <!-- Proyecto 3 -->
         <article class="project card">
           <div class="title">Book CSV Library</div>
-          <div class="meta">Java · Colecciones · Streams · TDD</div>
-          <p>Librería para importar/exportar libros desde CSV con validaciones, uso de Streams y tests con JUnit5.</p>
+          <div class="meta">Java · Streams · TDD</div>
+          <p>Librería para importar/exportar libros desde CSV con validaciones y tests.</p>
+
           <div class="tags">
-            <span class="chip">Java 21</span>
-            <span class="chip">JUnit5</span>
-            <span class="chip">Mockito</span>
+            <span class="tag-mini">Java 21</span>
+            <span class="tag-mini">JUnit5</span>
+            <span class="tag-mini">Mockito</span>
           </div>
+
           <div class="actions mt-8">
-            <a class="btn" href="https://github.com/tu-usuario/book-csv-library" target="_blank"
-              rel="noreferrer">Repo</a>
-            <a class="btn" href="https://github.com/tu-usuario/book-csv-library#readme" target="_blank"
-              rel="noreferrer">README</a>
+            <a class="btn btn-real" href="https://github.com/tu-usuario/book-csv-library" target="_blank">Repo</a>
+            <a class="btn btn-real" href="https://github.com/tu-usuario/book-csv-library#readme" target="_blank">README</a>
           </div>
         </article>
+
       </div>
     </section>
 
@@ -168,24 +186,23 @@ public static void main(String[] args) {
     <section id="formacion" class="section">
       <h3 class="section-title">Formación</h3>
       <p class="section-subtitle">Estudios más destacados.</p>
-      <h6></h6>
 
       <div class="timeline-edu reveal">
+
         <!-- DAW -->
         <article class="timeline-item card">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <div class="timeline-year">2025 – Actualidad</div>
             <h4 class="timeline-title">Grado Superior en Desarrollo de Aplicaciones Web</h4>
-            <p class="timeline-text">
-              Por FP Aspasia.
-            </p>
-            <p></p>
+
+            <p class="timeline-text">Por FP Aspasia.</p>
+
             <div class="timeline-tags">
-              <span class="chip">DAW</span>
-              <span class="chip">Backend</span>
-              <span class="chip">Software</span>
-              <span class="chip chip-status">En curso</span>
+              <span class="tag-mini">DAW</span>
+              <span class="tag-mini">Backend</span>
+              <span class="tag-mini">Software</span>
+              <span class="tag-mini tag-status">En curso</span>
             </div>
           </div>
         </article>
@@ -196,14 +213,13 @@ public static void main(String[] args) {
           <div class="timeline-content">
             <div class="timeline-year">2024</div>
             <h4 class="timeline-title">Curso Desarrollo Web en Python by IBM</h4>
-            <p class="timeline-text">
-              De la mano de IBM SkillBuild.
-            </p>
-            <p></p>
+
+            <p class="timeline-text">De la mano de IBM SkillBuild.</p>
+
             <div class="timeline-tags">
-              <span class="chip">Python</span>
-              <span class="chip">Web</span>
-              <span class="chip">IBM SkillBuild</span>
+              <span class="tag-mini">Python</span>
+              <span class="tag-mini">Web</span>
+              <span class="tag-mini">IBM SkillBuild</span>
             </div>
           </div>
         </article>
@@ -214,37 +230,38 @@ public static void main(String[] args) {
           <div class="timeline-content">
             <div class="timeline-year">2018 – 2020</div>
             <h4 class="timeline-title">Grado Superior en Dirección de Cocina</h4>
-            <p class="timeline-text">
-              Escuela de Hostelería.
-            </p>
-            <p></p>
+
+            <p class="timeline-text">Escuela de Hostelería.</p>
+
             <div class="timeline-tags">
-              <span class="chip">Gastronomía</span>
-              <span class="chip">Gestión equipos</span>
+              <span class="tag-mini">Gastronomía</span>
+              <span class="tag-mini">Gestión equipos</span>
             </div>
           </div>
         </article>
+
       </div>
     </section>
 
     <!-- LEARNING -->
     <section id="learning" class="section">
-      <h3 class="section-title">Aprendizaje &amp; Trayectoria</h3>
+      <h3 class="section-title">Aprendizaje & Trayectoria</h3>
       <p class="section-subtitle">Breve paso por lo que va cayendo en mis manos.</p>
-      <h6></h6>
 
       <div class="learning-controls">
+
+        <!-- Chips de filtrado (sí tienen acción) -->
         <div class="chips" role="tablist" aria-label="Filtrar por tema">
-          <button class="chip active" data-tag="Todos" role="tab" aria-selected="true">Todos</button>
-          <button class="chip" data-tag="Java" role="tab" aria-selected="false">Java</button>
-          <button class="chip" data-tag="SQL" role="tab" aria-selected="false">SQL</button>
-          <button class="chip" data-tag="Diseño" role="tab" aria-selected="false">Diseño</button>
-          <button class="chip" data-tag="Comunicación" role="tab" aria-selected="false">Comunicación</button>
-          <button class="chip" data-tag="Productividad" role="tab" aria-selected="false">Productividad</button>
+          <button class="chip active btn-real" data-tag="Todos" role="tab" aria-selected="true">Todos</button>
+          <button class="chip btn-real" data-tag="Java" role="tab">Java</button>
+          <button class="chip btn-real" data-tag="SQL" role="tab">SQL</button>
+          <button class="chip btn-real" data-tag="Diseño" role="tab">Diseño</button>
+          <button class="chip btn-real" data-tag="Comunicación" role="tab">Comunicación</button>
+          <button class="chip btn-real" data-tag="Productividad" role="tab">Productividad</button>
         </div>
 
         <div class="controls-right">
-          <button id="toggle-ideas" class="toggle" type="button" aria-pressed="true">
+          <button id="toggle-ideas" class="toggle btn-real" type="button" aria-pressed="true">
             Ideas clave: <span class="toggle-state">ON</span>
           </button>
 
@@ -273,19 +290,25 @@ public static void main(String[] args) {
         <h4 id="queue-title" class="block-title">En la recámara</h4>
         <div id="queue-list" class="list-queue"></div>
       </section>
+
     </section>
 
     <!-- CONTACTO -->
     <section id="contacto" class="section card">
       <h3 class="section-title">Contacto</h3>
       <p>¿Te interesa colaborar o dar feedback?</p>
-      <p><a class="btn primary" href="mailto:accion.quevedo@gmail.com" aria-label="Enviar email">Escríbeme a este
-          email</a></p>
+      <p>
+        <a class="btn primary btn-real" href="mailto:accion.quevedo@gmail.com" aria-label="Enviar email">
+          Escríbeme a este email
+        </a>
+      </p>
     </section>
+
   </main>
 
-  <footer class="container"> © <span id="year"></span> · Jose González Quevedo <span aria-hidden="true">🚀</span>
+  <footer class="container">
+    © <span id="year"></span> · Jose González Quevedo 🚀
   </footer>
-</body>
 
+</body>
 </html>

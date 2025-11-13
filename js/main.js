@@ -274,7 +274,7 @@
 
   function markDefaultReveals() {
     const defaults = [
-      '#proyectos .grid.projects',
+      '#proyectos',
       '#skills-grid',
       '#learning',
       '#contacto'
@@ -293,7 +293,17 @@
     renderEvents();
     renderQueue();
     bindControls();
+
     markDefaultReveals();
-    initReveal()
+    initReveal();
+
+    // Animación de entrada del HERO al cargar
+    const hero = $('.hero-animate');
+    if (hero) {
+      // Esperamos al siguiente frame para asegurarnos de que la transición se aplica
+      requestAnimationFrame(() => {
+        hero.classList.add('hero-visible');
+      });
+    }
   });
 })();
