@@ -373,23 +373,23 @@ header {
   filter: saturate(1.07) brightness(1.05);
 }
 
-/* ===== Layouts y tarjetas ===== */
-/* ===== Layouts y tarjetas ===== */
+/* ===== HERO EPIC ===== */
 
-/* HERO: layout principal */
+/* Layout principal del hero */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr); /* ~57/43 */
-  gap: 32px;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr); /* ~60/40 */
+  gap: clamp(32px, 5vw, 52px);
   align-items: center;
-  padding: 72px 24px 96px;
+  padding: clamp(56px, 9vh, 80px) 24px clamp(40px, 7vh, 72px);
 }
 
-/* El hero ocupa casi toda la pantalla en desktop, pero respeta el ancho de .container */
+/* Hero ocupa prácticamente todo el alto de la pantalla en desktop */
 .hero-full {
-  min-height: calc(100vh - 80px); /* header sticky ~80px */
+  min-height: calc(100vh - 80px); /* restamos header sticky aprox. */
 }
 
+/* Columna izquierda */
 .hero-main {
   max-width: 640px;
 }
@@ -401,19 +401,15 @@ header {
   margin: 0 0 16px;
 }
 
-.hero-main .badges {
-  margin-top: 14px;
-  row-gap: 8px;
-}
-
-.hero-main .badge {
-  font-size: .82rem;
-}
-
 .hero .badges {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.hero-main .badges {
+  margin-top: 14px;
+  row-gap: 8px;
 }
 
 /* Botones un poco más potentes en el hero */
@@ -422,7 +418,7 @@ header {
   font-size: .95rem;
 }
 
-/* Snippet: tarjeta de código a la derecha, cerca del texto */
+/* Columna derecha: snippet */
 .hero-snippet {
   max-width: 520px;
   justify-self: flex-end;
@@ -431,7 +427,7 @@ header {
 /* Animación de entrada del hero al cargar */
 .hero-animate {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(22px);
   transition: opacity .7s ease, transform .7s ease;
 }
 
@@ -440,10 +436,10 @@ header {
   transform: translateY(0);
 }
 
-/* El snippet solo se anima en Y, no tocamos X para no romper la composición */
+/* Tarjeta de código con ligero delay en Y (sin tocar posición X) */
 .hero-animate .hero-snippet {
   opacity: 0;
-  transform: translateY(26px);
+  transform: translateY(28px);
   transition: opacity .7s ease .08s, transform .7s ease .08s;
 }
 
@@ -451,6 +447,110 @@ header {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Responsive hero */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 32px 16px 40px;
+  }
+
+  .hero-full {
+    min-height: auto;
+  }
+
+  .hero-snippet {
+    justify-self: stretch;
+  }
+
+  .hero-main {
+    max-width: 100%;
+  }
+}
+
+/* ===== Scroll hint bajo el hero ===== */
+
+.hero-scroll-hint {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;                 /* pegado a la parte baja de la pantalla */
+  transform: translateX(-50%) translateY(12px);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+/* Cuando está visible (la clase la pone JS) */
+.hero-scroll-hint.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+/* Cuando lo ocultamos (al llegar a proyectos o al clickar) */
+.hero-scroll-hint.hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+  pointer-events: none;
+}
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: .8rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.scroll-mouse {
+  width: 22px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+  background: color-mix(in oklab, var(--bg-soft) 92%, #ffffff08 8%);
+}
+
+.scroll-wheel {
+  width: 4px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand-2);
+  animation: scroll-wheel 1.2s ease-in-out infinite;
+}
+
+.scroll-label {
+  opacity: .8;
+}
+
+@keyframes scroll-wheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(8px);
+    opacity: .2;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.95;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-scroll-hint {
+    bottom: 16px;
+  }
+}
+
 
 
 .card {

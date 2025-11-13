@@ -305,5 +305,41 @@
         hero.classList.add('hero-visible');
       });
     }
+        // ===== Scroll hint: aparece tarde y desaparece al llegar a Proyectos =====
+    const scrollHint = document.querySelector(".hero-scroll-hint");
+    const projectsSection = document.querySelector("#proyectos");
+
+    if (scrollHint) {
+      // Aparece a los 3 segundos
+      setTimeout(() => {
+        // Solo la mostramos si todavía estamos arriba del todo (no han scrolleado ya)
+        if (window.scrollY < 80) {
+          scrollHint.classList.add("visible");
+        }
+      }, 3000);
+
+      // Si hacen click en el propio indicador, lo ocultamos
+      scrollHint.addEventListener("click", () => {
+        scrollHint.classList.add("hidden");
+      });
+
+      // Cuando la sección de proyectos entra en viewport, ocultamos el indicador
+      if (projectsSection) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                scrollHint.classList.add("hidden");
+              }
+            });
+          },
+          {
+            threshold: 0.15, // con que se vea un 15% de Proyectos, lo quitamos
+          }
+        );
+
+        observer.observe(projectsSection);
+      }
+    }
   });
 })();
