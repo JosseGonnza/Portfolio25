@@ -257,6 +257,35 @@
     });
   });
 
+    // ===== Scroll Reveal =====
+  function initReveal() {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    $$('.reveal').forEach(el => observer.observe(el));
+  }
+
+  function markDefaultReveals() {
+    const defaults = [
+      '#proyectos .grid.projects',
+      '#skills-grid',
+      '#learning',
+      '#contacto'
+    ];
+
+    defaults.forEach(sel => {
+      const el = $(sel);
+      if (el) el.classList.add('reveal');
+    });
+  }
+
   // ===== Init =====
   document.addEventListener("DOMContentLoaded", () => {
     renderSkills();
@@ -264,5 +293,7 @@
     renderEvents();
     renderQueue();
     bindControls();
+    markDefaultReveals();
+    initReveal()
   });
 })();

@@ -372,7 +372,8 @@ header {
 /* ===== Layouts y tarjetas ===== */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* equilibrio entre texto y código */
+  grid-template-columns: 1fr 1fr;
+  /* equilibrio entre texto y código */
   gap: 28px;
   align-items: center;
   padding: 48px 24px;
@@ -457,6 +458,115 @@ header {
   border: 1px solid var(--border);
   padding: 4px 8px;
   border-radius: 999px
+}
+
+/* ===== Scroll reveal genérico ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Timeline Formación & cambio de rumbo ===== */
+.timeline-edu {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--brand);
+}
+
+.timeline-marker {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 2px solid var(--brand-2);
+  background: color-mix(in oklab, var(--brand) 45%, var(--bg-soft) 55%);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand) 10%, transparent);
+  margin-top: 4px;
+}
+
+.timeline-content {
+  display: grid;
+  gap: 4px;
+}
+
+.timeline-year {
+  font-size: .85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.timeline-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.timeline-text {
+  margin: 4px 0 0;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.chip.chip-status {
+  background: color-mix(in oklab, var(--brand) 35%, var(--bg-soft) 65%);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Timeline horizontal en pantallas grandes */
+@media (min-width: 900px) {
+  .timeline-edu {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    position: relative;
+  }
+
+  .timeline-edu::before {
+    content: "";
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 18px;
+    height: 2px;
+    background: var(--border);
+    z-index: -1;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-marker {
+    margin-bottom: 4px;
+  }
 }
 
 /* ===== Footer ===== */
