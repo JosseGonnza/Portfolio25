@@ -585,7 +585,17 @@ header {
 }
 
 .grid.projects {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: stretch;
+}
+
+.project.card {
+  height: 100%;
+}
+
+/* Empuja los botones al fondo de la card */
+.project .actions {
+  margin-top: auto;
 }
 
 .grid.two-cols {
@@ -611,7 +621,8 @@ header {
 .project .tags {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  margin-top: auto;
 }
 
 /* Chips compactos (proyectos, formación, etc.) */

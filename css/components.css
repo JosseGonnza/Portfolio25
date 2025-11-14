@@ -1,3 +1,43 @@
+/* Imagen dentro de proyectos (banner) */
+.project-image {
+  width: 100%;
+  margin: 12px 0 14px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
+}
+
+/* Glow muy suave acorde al brand */
+.project-image::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid color-mix(in oklab, var(--brand) 55%, transparent);
+  box-shadow: 0 0 18px color-mix(in oklab, var(--brand) 30%, transparent);
+  opacity: .45;
+  pointer-events: none;
+}
+
+/* Centrado visual real: zoom + shift */
+.project-image img {
+  width: 110%;          /* ligeramente más grande */
+  height: auto;
+  transform: translateX(04.5%) scale(1.099);
+  object-fit: cover;
+
+  /* Ajustes generales */
+  filter: saturate(1.05) brightness(1.03);
+  transition: transform .35s ease, filter .35s ease;
+}
+
+/* Hover (reemplace tu hover actual) */
+.project:hover .project-image img {
+  transform: translateX(05%) scale(1.15);
+  filter: saturate(1.12) brightness(1.05);
+}
+
 /* ===== Skills compact ===== */
 .skills-grid {
   display: grid;
