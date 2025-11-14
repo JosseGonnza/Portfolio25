@@ -665,7 +665,7 @@ header {
   transform: none;
 }
 
-/* ===== Timeline Formación & cambio de rumbo ===== */
+/* ===== Timeline Formación ===== */
 .timeline-edu {
   display: grid;
   gap: 16px;
@@ -724,103 +724,9 @@ header {
   }
 }
 
-/* Hover: ligera elevación + glow en tarjeta */
-.timeline-item:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-  border-color: var(--brand);
-}
-
-/* Marker básico */
-.timeline-marker {
-  flex-shrink: 0;
-  width: 16px;
-  height: 16px;
-  border-radius: 999px;
-  border: 2px solid var(--brand-2);
-  background: color-mix(in oklab, var(--brand) 45%, var(--bg-soft) 55%);
-  box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand) 10%, transparent);
-  margin-top: 4px;
-  transition: box-shadow .2s ease, background .2s ease, border-color .2s ease;
-}
-
-/* Glow del marker al hacer hover en la tarjeta */
-.timeline-item:hover .timeline-marker {
-  background: color-mix(in oklab, var(--brand) 70%, var(--bg-soft) 30%);
-  border-color: var(--brand);
-  box-shadow:
-    0 0 0 5px color-mix(in oklab, var(--brand) 20%, transparent),
-    0 0 18px color-mix(in oklab, var(--brand) 35%, transparent);
-}
-
-.timeline-content {
-  display: grid;
-  gap: 4px;
-}
-
-.timeline-year {
-  font-size: .85rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .06em;
-}
-
-.timeline-title {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.timeline-text {
-  margin: 4px 0 0;
-  font-size: .9rem;
-  color: var(--muted);
-}
-
-.timeline-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 6px;
-}
-
-.chip.chip-status {
-  background: color-mix(in oklab, var(--brand) 35%, var(--bg-soft) 65%);
-  color: #fff;
-  font-weight: 600;
-}
 
 /* Timeline horizontal + línea base + segmento interactivo en pantallas grandes */
 @media (min-width: 900px) {
-  .timeline-edu {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    position: relative;
-  }
-
-  /* Línea base suave que une los 3 puntos */
-  .timeline-edu::before {
-    content: "";
-    position: absolute;
-    left: 10%;
-    right: 10%;
-    top: 18px;
-    height: 2px;
-    background: var(--border);
-    z-index: -2;
-  }
-
-  .timeline-edu .timeline-item {
-    flex-direction: column;
-    align-items: flex-start;
-    /* Slide-up un poco más marcado en desktop */
-    transform: translateY(30px);
-  }
-
-  /* Ajustamos marker para la versión horizontal */
-  .timeline-marker {
-    margin-bottom: 4px;
-  }
-
   /* Segmento de línea interactivo bajo cada item */
   .timeline-item::after {
     content: "";
@@ -977,29 +883,6 @@ footer {
     text-align: center
   }
 }
-
-/* Responsive hero */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    align-items: flex-start;
-    padding: 32px 16px 40px;
-  }
-
-  .hero-full {
-    min-height: auto; /* en móvil que no obligue a pantalla completa */
-  }
-
-  .hero-snippet {
-    justify-self: stretch;
-  }
-
-  .hero-main {
-    max-width: 100%;
-  }
-}
-
 
 /* Grid-cards responsive (no anidar bajo otro @media) */
 @media (min-width: 700px) {
