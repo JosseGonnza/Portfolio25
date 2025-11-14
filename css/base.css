@@ -579,6 +579,26 @@ header {
   color: var(--muted);
 }
 
+/* Separación extra entre Proyectos y Skills */
+#proyectos {
+  margin-bottom: 12px;
+}
+
+#skills {
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+#formacion {
+  margin-top: 28px;
+}
+
+@media (min-width: 900px) {
+  #skills {
+    margin-top: 40px; /* un poco más de aire en desktop */
+  }
+}
+
 .grid {
   display: grid;
   gap: 16px
@@ -656,6 +676,15 @@ header {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Variante: que tarde un poco más en aparecer */
+.reveal-late {
+  transition-delay: .25s;
+}
+
+.reveal-late.visible {
+  transition-delay: .25s;
 }
 
 /* La timeline se anima ella sola, no queremos doble transformación en el contenedor */

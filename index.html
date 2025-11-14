@@ -86,24 +86,24 @@
       <div class="card hero-snippet">
         <div class="code" aria-label="Código Java ejemplo">
           <pre><code>public class DailyMood {
-public static void main(String[] args) {
-  int motivation = 100;
-  int bugs = (int)(Math.random() * 5);
+  public static void main(String[] args) {
+    int motivation = 100;
+    int bugs = (int)(Math.random() * 5);
 
-  System.out.println("🔥 Vamos con todo!");
+    System.out.println("🔥 Vamos con todo!");
 
-  while (motivation > 0 && bugs > 0) {
-    System.out.println("💻 Peleando... quedan " + bugs);
-    bugs--;
-    motivation -= 25;
+    while (motivation > 0 && bugs > 0) {
+      System.out.println("💻 Peleando... quedan " + bugs);
+      bugs--;
+      motivation -= 25;
+    }
+
+    if (bugs == 0) {
+      System.out.println("✅ Podemos con esto y con menos");
+    } else {
+      System.out.println("😅 Necesito más café...");
+    }
   }
-
-  if (bugs == 0) {
-    System.out.println("✅ Podemos con esto y con menos");
-  } else {
-    System.out.println("😅 Necesito más café...");
-  }
-}
 }
           </code></pre>
         </div>
@@ -233,15 +233,14 @@ public static void main(String[] args) {
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section">
+    <section id="skills" class="section reveal reveal-late">
       <h3 class="section-title">Skills</h3>
       <p class="section-subtitle">Tecnologías principales y ecosistema que manejo.</p>
-      <h6></h6>
       <div id="skills-grid" class="skills-grid"></div>
     </section>
 
     <!-- FORMACION -->
-    <section id="formacion" class="section">
+    <section id="formacion" class="section reveal reveal-late">
       <h3 class="section-title">Formación</h3>
       <p class="section-subtitle">Estudios más destacados.</p>
 
@@ -302,7 +301,7 @@ public static void main(String[] args) {
     </section>
 
     <!-- LEARNING -->
-    <section id="learning" class="section">
+    <section id="learning" class="section reveal reveal-early">
       <h3 class="section-title">Aprendizaje & Trayectoria</h3>
       <p class="section-subtitle">Breve paso por lo que va cayendo en mis manos.</p>
 

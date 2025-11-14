@@ -257,34 +257,73 @@
     });
   });
 
-    // ===== Scroll Reveal =====
+  // ===== Scroll Reveal (early / normal / late) =====
   function initReveal() {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        obs.unobserve(entry.target);
-      });
-    }, {
-      threshold: 0.2
+    const revealEls = $$('.reveal');
+    if (!revealEls.length) return;
+
+    // helper para crear observers
+    const makeObserver = (options) =>
+      new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        });
+      }, options);
+
+    // Comportamiento “normal”
+    const observerDefault = makeObserver({
+      threshold: 0.25
     });
 
-    $$('.reveal').forEach(el => observer.observe(el));
+    // Que entre ANTES (Aprendizaje & Trayectoria)
+    const observerEarly = makeObserver({
+      threshold: 0,
+      rootMargin: '0px 0px -15%' // cuando entra en el 45% superior de pantalla
+    });
+
+    // Que entre un poco MÁS TARDE (Skills)
+    const observerLate = makeObserver({
+      threshold: 0.35
+    });
+
+    revealEls.forEach(el => {
+      if (el.classList.contains('reveal-early')) {
+        observerEarly.observe(el);
+      } else if (el.classList.contains('reveal-late')) {
+        observerLate.observe(el);
+      } else {
+        observerDefault.observe(el);
+      }
+    });
   }
 
   function markDefaultReveals() {
+    // mejor animar secciones completas, no solo el grid
     const defaults = [
       '#proyectos',
-      '#skills-grid',
+      '#skills',
+      '#formacion',
       '#learning',
       '#contacto'
     ];
 
     defaults.forEach(sel => {
       const el = $(sel);
-      if (el) el.classList.add('reveal');
+      if (!el) return;
+      el.classList.add('reveal');
     });
+
+    // Aprendizaje & Trayectoria → entra ANTES
+    const learning = $('#learning');
+    if (learning) learning.classList.add('reveal-early');
+
+    // Skills → entra un poco más tarde
+    const skills = $('#skills');
+    if (skills) skills.classList.add('reveal-late');
   }
+
 
   // ===== Init =====
   document.addEventListener("DOMContentLoaded", () => {
