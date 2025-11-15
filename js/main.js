@@ -1,4 +1,3 @@
-/* Main JS – sin cambiar funcionalidades, solo limpieza */
 (() => {
   'use strict';
 
@@ -324,7 +323,6 @@
     if (skills) skills.classList.add('reveal-late');
   }
 
-
   // ===== Init =====
   document.addEventListener("DOMContentLoaded", () => {
     renderSkills();
@@ -344,7 +342,8 @@
         hero.classList.add('hero-visible');
       });
     }
-        // ===== Scroll hint: aparece tarde y desaparece al llegar a Proyectos =====
+
+    // ===== Scroll hint: aparece tarde y desaparece al llegar a Proyectos =====
     const scrollHint = document.querySelector(".hero-scroll-hint");
     const projectsSection = document.querySelector("#proyectos");
 
@@ -380,5 +379,52 @@
         observer.observe(projectsSection);
       }
     }
+
+    // ===== Modal "Sobre mí" en móvil =====
+    const aboutBubble = document.getElementById('aboutBubble');
+    const aboutModal = document.getElementById('aboutModal');
+
+    if (aboutBubble && aboutModal) {
+      const openModal = () => {
+        aboutModal.hidden = false;                 // quitamos el atributo hidden
+        aboutModal.classList.add('open');          // activa opacity + pointer-events
+        aboutBubble.setAttribute('aria-expanded', 'true');
+      };
+
+      const closeModal = () => {
+        aboutModal.classList.remove('open');
+        aboutBubble.setAttribute('aria-expanded', 'false');
+        // Esperamos a que termine la transición para ocultarlo totalmente
+        setTimeout(() => {
+          if (!aboutModal.classList.contains('open')) {
+            aboutModal.hidden = true;
+          }
+        }, 200);
+      };
+
+      aboutBubble.addEventListener('click', () => {
+        // Reiniciamos la anim de la onda
+        aboutBubble.classList.remove('tapped');
+        void aboutBubble.offsetWidth; // truco para forzar reflow
+        aboutBubble.classList.add('tapped');
+
+        openModal();
+      });
+
+      // Cerrar tocando fuera del contenido
+      aboutModal.addEventListener('click', (event) => {
+        if (event.target === aboutModal) {
+          closeModal();
+        }
+      });
+
+      // Cerrar con Esc
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !aboutModal.hidden) {
+          closeModal();
+        }
+      });
+    }
   });
+
 })();

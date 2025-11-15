@@ -1,4 +1,4 @@
-/* Imagen dentro de proyectos (banner) */
+/* ===== Imagen dentro de proyectos (banner) ===== */
 .project-image {
   width: 100%;
   margin: 12px 0 14px;
@@ -8,7 +8,6 @@
   box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
 }
 
-/* Glow muy suave acorde al brand */
 .project-image::before {
   content: "";
   position: absolute;
@@ -20,21 +19,17 @@
   pointer-events: none;
 }
 
-/* Centrado visual real: zoom + shift */
 .project-image img {
-  width: 110%;          /* ligeramente más grande */
+  width: 110%;
   height: auto;
-  transform: translateX(04.5%) scale(1.099);
+  transform: translateX(4.5%) scale(1.099);
   object-fit: cover;
-
-  /* Ajustes generales */
   filter: saturate(1.05) brightness(1.03);
   transition: transform .35s ease, filter .35s ease;
 }
 
-/* Hover (reemplace tu hover actual) */
 .project:hover .project-image img {
-  transform: translateX(05%) scale(1.15);
+  transform: translateX(5%) scale(1.15);
   filter: saturate(1.12) brightness(1.05);
 }
 
@@ -45,13 +40,13 @@
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-@media (min-width:700px) {
+@media (min-width: 700px) {
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (min-width:1024px) {
+@media (min-width: 1024px) {
   .skills-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -84,7 +79,7 @@
   font-weight: 600;
 }
 
-/* Barra de nivel (con variable --level de 0..5; soporta decimales) */
+/* Barra de nivel (0..5) */
 .skill-level {
   position: relative;
   width: 100px;
@@ -98,7 +93,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  width: calc((var(--level, 1)/5)*100%);
+  width: calc((var(--level, 1)/5) * 100%);
   background: color-mix(in oklab, var(--brand) 40%, var(--brand) 60%);
   border-radius: 999px;
 }
@@ -170,6 +165,7 @@
   flex-wrap: wrap;
 }
 
+/* Chips de filtrado (solo aquí) */
 .chip {
   border: 1px solid var(--border);
   background: var(--bg-soft);
@@ -230,7 +226,7 @@
   font-weight: 600;
 }
 
-/* Cards grid */
+/* Cards grid (books) */
 .grid-cards {
   display: grid;
   gap: 12px;
@@ -310,7 +306,7 @@
   display: none;
 }
 
-/* Eventos */
+/* ===== Eventos ===== */
 .list-events {
   display: grid;
   gap: 12px;
@@ -349,7 +345,7 @@
   color: var(--txt);
 }
 
-/* Queue */
+/* ===== Queue ===== */
 .list-queue {
   display: grid;
   gap: 8px;
@@ -375,9 +371,63 @@
   margin-top: 6px;
 }
 
-.progressbar>i {
+.progressbar > i {
   display: block;
   height: 100%;
   width: 0%;
   background: var(--brand);
+}
+
+/* ===== Mobile refinements ≤600px ===== */
+@media (max-width: 600px) {
+
+  .chip,
+  .tag-mini,
+  .badge {
+    font-size: .75rem;
+    padding: 3px 8px;
+  }
+
+  .tags-mini {
+    gap: 4px;
+  }
+
+  .badges {
+    gap: 6px;
+  }
+
+  .skill-card {
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .skill-foot {
+    font-size: .85rem;
+    gap: 6px;
+  }
+
+  .learning-controls {
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .controls-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .card-book,
+  .event {
+    padding: 12px;
+  }
+
+  .queue-item {
+    padding: 8px 10px;
+  }
+
+  .idea {
+    font-size: .85rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
 }

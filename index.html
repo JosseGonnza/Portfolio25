@@ -60,8 +60,8 @@
           <span class="role">Desarrollador Backend</span>
         </h1>
 
-        <p>
-          Autodidacta por bandera, cursando Desarrollo de Aplicaciones Web y mucha hambre de aprender.
+        <p class="hero-description">
+          Autodidacta por bandera, cursando Desarrollo de Aplicaciones Web y con mucha hambre de aprender.
           Aquí muestro proyectos reales, código limpio y buenas prácticas.
         </p>
 
@@ -74,15 +74,25 @@
 
         <div class="actions mt-14 hero-actions">
           <a class="btn primary btn-real" href="#proyectos">Ver proyectos</a>
-          <a class="btn social btn-real" href="https://github.com/JosseGonnza" target="_blank">
-            <img class="social-icon github-icon" src="public/github-sign-white.png" alt="Logotipo de GitHub" width="24"
-              height="24">
-          </a>
-          <a class="btn social btn-real" href="https://www.linkedin.com/in/jossegonnza" target="_blank">
-            <img class="social-icon linkedin-icon" src="public/linkedin-white.png" alt="Logotipo de LinkedIn" width="24"
-              height="24">
-          </a>
+
+          <div class="social-wrapper">
+            <a class="btn social btn-real" href="https://github.com/JosseGonnza" target="_blank" aria-label="GitHub">
+              <img class="social-icon github-icon" src="public/github-sign-white.png" alt="Logotipo de GitHub"
+                width="24" height="24">
+            </a>
+            <a class="btn social btn-real" href="https://www.linkedin.com/in/jossegonnza" target="_blank"
+              aria-label="LinkedIn">
+              <img class="social-icon linkedin-icon" src="public/linkedin-white.png" alt="Logotipo de LinkedIn"
+                width="24" height="24">
+            </a>
+          </div>
         </div>
+
+        <button id="aboutBubble" class="about-bubble btn-real" type="button" aria-haspopup="dialog"
+          aria-controls="aboutModal" aria-expanded="false">
+          <img src="public/infoPurple.png" alt="Más información sobre mí" class="about-icon" width="28" height="28" />
+        </button>
+
       </div>
 
       <div class="card hero-snippet">
@@ -311,48 +321,48 @@
     <section id="learning" class="section reveal reveal-early">
       <h3 class="section-title">Aprendizaje & Trayectoria</h3>
       <p class="section-subtitle">Breve paso por lo que va cayendo en mis manos.</p>
-        <div class="learning-controls">
+      <div class="learning-controls">
 
-          <!-- Chips de filtrado (sí tienen acción) -->
-          <div class="chips" role="tablist" aria-label="Filtrar por tema">
-            <button class="chip active btn-real" data-tag="Todos" role="tab" aria-selected="true">Todos</button>
-            <button class="chip btn-real" data-tag="Java" role="tab">Java</button>
-            <button class="chip btn-real" data-tag="SQL" role="tab">SQL</button>
-            <button class="chip btn-real" data-tag="Diseño" role="tab">Diseño</button>
-            <button class="chip btn-real" data-tag="Comunicación" role="tab">Comunicación</button>
-            <button class="chip btn-real" data-tag="Productividad" role="tab">Productividad</button>
-          </div>
-
-          <div class="controls-right">
-            <button id="toggle-ideas" class="toggle btn-real" type="button" aria-pressed="true">
-              Ideas clave: <span class="toggle-state">ON</span>
-            </button>
-
-            <label class="sorter">
-              <span class="sr-only">Ordenar por</span>
-              <select id="sort-select" aria-label="Ordenar por">
-                <option value="anio" selected>Año</option>
-                <option value="impacto">Impacto</option>
-                <option value="tema">Tema</option>
-              </select>
-            </label>
-          </div>
+        <!-- Chips de filtrado (sí tienen acción) -->
+        <div class="chips" role="tablist" aria-label="Filtrar por tema">
+          <button class="chip active btn-real" data-tag="Todos" role="tab" aria-selected="true">Todos</button>
+          <button class="chip btn-real" data-tag="Java" role="tab">Java</button>
+          <button class="chip btn-real" data-tag="SQL" role="tab">SQL</button>
+          <button class="chip btn-real" data-tag="Diseño" role="tab">Diseño</button>
+          <button class="chip btn-real" data-tag="Comunicación" role="tab">Comunicación</button>
+          <button class="chip btn-real" data-tag="Productividad" role="tab">Productividad</button>
         </div>
 
-        <section aria-labelledby="read-title" class="learning-block">
-          <h4 id="read-title" class="block-title">Leídos</h4>
-          <div id="read-grid" class="grid-cards"></div>
-        </section>
+        <div class="controls-right">
+          <button id="toggle-ideas" class="toggle btn-real" type="button" aria-pressed="true">
+            Ideas clave: <span class="toggle-state">ON</span>
+          </button>
 
-        <section aria-labelledby="events-title" class="learning-block">
-          <h4 id="events-title" class="block-title">Eventos</h4>
-          <div id="events-list" class="list-events"></div>
-        </section>
+          <label class="sorter">
+            <span class="sr-only">Ordenar por</span>
+            <select id="sort-select" aria-label="Ordenar por">
+              <option value="anio" selected>Año</option>
+              <option value="impacto">Impacto</option>
+              <option value="tema">Tema</option>
+            </select>
+          </label>
+        </div>
+      </div>
 
-        <section aria-labelledby="queue-title" class="learning-block">
-          <h4 id="queue-title" class="block-title">En la recámara</h4>
-          <div id="queue-list" class="list-queue"></div>
-        </section>
+      <section aria-labelledby="read-title" class="learning-block">
+        <h4 id="read-title" class="block-title">Leídos</h4>
+        <div id="read-grid" class="grid-cards"></div>
+      </section>
+
+      <section aria-labelledby="events-title" class="learning-block">
+        <h4 id="events-title" class="block-title">Eventos</h4>
+        <div id="events-list" class="list-events"></div>
+      </section>
+
+      <section aria-labelledby="queue-title" class="learning-block">
+        <h4 id="queue-title" class="block-title">En la recámara</h4>
+        <div id="queue-list" class="list-queue"></div>
+      </section>
 
     </section>
 
@@ -384,6 +394,16 @@
     </section>
 
     <div class="contact-separator"></div>
+
+    <div id="aboutModal" class="about-modal" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle" hidden>
+      <div class="about-modal-inner card">
+        <h2 id="aboutModalTitle" class="section-title">✨</h2>
+        <p class="about-modal-text">
+          Autodidacta por bandera, cursando Desarrollo de Aplicaciones Web y con mucha hambre de aprender.
+          Aquí muestro proyectos reales, código limpio y buenas prácticas.
+        </p>
+      </div>
+    </div>
 
   </main>
 
