@@ -15,9 +15,16 @@
 
 ## Badges
 
-![Static](https://img.shields.io/badge/site-static-green)
-![CI](https://img.shields.io/badge/CI-gh--pages-blue)
+![CI - Portfolio](https://github.com/JosseGonnza/Portfolio25/actions/workflows/ci.yml/badge.svg) · 
+![Last commit](https://img.shields.io/github/last-commit/JosseGonnza/Portfolio25) · 
+![Repo size](https://img.shields.io/github/repo-size/JosseGonnza/Portfolio25) · 
+![Vercel](https://img.shields.io/badge/deploy-vercel-black?logo=vercel) · 
 ![Made%20with%20Love](https://img.shields.io/badge/made%20with-%E2%9D%A4-red)
+
+## Vista previa
+
+![Preview del sitio](./public/preview.png)
+
 
 ## Visión general
 
@@ -28,13 +35,24 @@ Portfolio personal minimalista y rápido, orientado a **backend Java**, **TDD** 
 * **Accesible**: navegación por teclado, `skip-link`, `aria-pressed`, foco visible.
 * **Rendimiento**: CSS/JS separados, imágenes optimizadas.
 
+## Características
+
+- Animaciones suaves y scroll reveal personalizado
+- Modo oscuro/claro con persistencia
+- Hero animado con snippet de código
+- Sección de proyectos nivel estudio de caso
+- Sistema de filtrado (chips) en Aprendizaje
+- Accesibilidad cuidada (teclado + aria)
+- CI configurado con GitHub Actions
+
 
 
 ## Tecnologías
 
-* **Frontend**: HTML5, CSS3, JavaScript (vanilla)
+* **Frontend**: HTML5, CSS3, JavaScript
 * **Build** (opcional): ninguna; sirve como sitio estático. Puedes usar `npm http-server` o VS Code Live Server.
-* **Infra**: GitHub Pages (o Netlify/Vercel, opcional)
+* **Infra**: Vercel (deploy automático desde GitHub)
+
 
 
 ## Instalación
@@ -43,8 +61,8 @@ Portfolio personal minimalista y rápido, orientado a **backend Java**, **TDD** 
 
 ```bash
 # Clona el repo
-git clone https://github.com/tu-usuario/tu-repo-portfolio.git
-cd tu-repo-portfolio
+git clone https://github.com/JosseGonnza/Portfolio25.git
+cd Portfolio25
 
 # Opción A: Live Server (VS Code)
 # Clic derecho en index.html → "Open with Live Server"

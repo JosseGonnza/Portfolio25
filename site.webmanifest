@@ -9,17 +9,17 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/public/IconPortfolio.png",
+      "src": "/public/IconPortfolio.webp",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/public/IconPortfolio512.png",
+      "src": "/public/IconPortfolio512.webp",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/public/IconPortfolioMaskable.png",
+      "src": "/public/IconPortfolioMaskable.webp",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any maskable"
