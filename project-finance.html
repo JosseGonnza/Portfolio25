@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Caso de estudio · Personal Finance Manager API · Backend Java & Spring Boot" />
+  <title>Case Study · Personal Finance Manager API</title>
+
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon / App Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="public/IconPortfolio.webp">
+  <link rel="icon" type="image/png" sizes="192x192" href="public/IconPortfolio.webp">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/IconPortfolio.webp">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <div class="bg-layer bg-glows"></div>
+  <div class="bg-layer bg-lines"></div>
+
+  <a class="skip-link" href="#content">Saltar al contenido</a>
+
+  <header>
+    <nav class="nav container">
+      <div class="brand">
+        <a href="index.html" class="logo" aria-label="Volver al portfolio">
+          <img src="public/IconPortfolio.webp" alt="Logo Jose González" width="36" height="36">
+          <span class="sr-only">Volver al portfolio</span>
+        </a>
+        <h1>Personal Finance Manager API</h1>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="index.html">← Volver</a>
+        <button id="themeToggle" class="btn primary" aria-label="Cambiar tema" aria-pressed="false">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content" class="container">
+
+    <!-- HERO -->
+    <section class="section card">
+      <h2 class="section-title">Personal Finance Manager API</h2>
+      <p class="section-subtitle">
+        API backend para gestionar ingresos, gastos, categorías y reportes mensuales. Diseñada con
+        Spring Boot, arquitectura limpia y foco en pruebas y mantenibilidad.
+      </p>
+
+      <div class="badges mt-14">
+        <span class="badge">Java · Spring Boot</span>
+        <span class="badge">Arquitectura hexagonal</span>
+        <span class="badge">TDD · JUnit5</span>
+        <span class="badge">PostgreSQL · Docker</span>
+      </div>
+
+      <div class="actions mt-14">
+        <a class="btn primary btn-real" href="https://github.com/tu-usuario/personal-finance-manager" target="_blank" rel="noreferrer">
+          Ver repositorio
+        </a>
+        <a class="btn primary btn-real" href="https://tu-dominio.dev/finance-api-docs" target="_blank" rel="noreferrer">
+          Ver documentación / Swagger
+        </a>
+      </div>
+    </section>
+
+    <div class="contact-separator"></div>
+
+    <!-- CONTEXTO -->
+    <section class="section card">
+      <h3 class="section-title">Contexto & problema</h3>
+      <p class="section-subtitle">¿Qué intenta resolver esta API?</p>
+
+      <p>
+        El objetivo es ayudar a una persona a entender en qué se le va el dinero cada mes: registrar ingresos
+        y gastos, agruparlos por categorías, definir presupuestos y generar reportes por periodo.
+      </p>
+      <p>
+        Quería algo más que una lista de movimientos: un dominio que pueda crecer con nuevas reglas
+        sin reventar todo cada vez que se añade una funcionalidad.
+      </p>
+    </section>
+
+    <div class="contact-separator"></div>
+
+    <!-- OBJETIVOS -->
+    <section class="section card">
+      <h3 class="section-title">Objetivos del proyecto</h3>
+      <p class="section-subtitle">Qué buscaba conseguir exactamente.</p>
+
+      <ul class="workflow-list">
+        <li>
+          <h4>1. Dominio claro y extensible</h4>
+          <p>Separar bien Movimiento, Categoría, Presupuesto y Usuario, evitando que todo sea solo “filas en una tabla”.</p>
+        </li>
+        <li>
+          <h4>2. Arquitectura que permita crecer</h4>
+          <p>Acercarme a una arquitectura hexagonal/clean: dominio aislado de controladores y base de datos.</p>
+        </li>
+        <li>
+          <h4>3. TDD en reglas clave</h4>
+          <p>Usar TDD en las reglas de negocio más delicadas para poder refactorizar sin miedo.</p>
+        </li>
+        <li>
+          <h4>4. Deploy local fácil</h4>
+          <p>Levantar API + PostgreSQL con Docker Compose para que cualquiera pueda probarlo rápido.</p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="contact-separator"></div>
+
+    <!-- STACK -->
+    <section class="section card">
+      <h3 class="section-title">Stack & arquitectura</h3>
+      <p class="section-subtitle">Tecnologías y decisiones técnicas.</p>
+
+      <div class="grid two-cols">
+        <div>
+          <h4>Stack técnico</h4>
+          <ul class="contact-list">
+            <li>· Java 17 / 21</li>
+            <li>· Spring Boot (Web, Data JPA)</li>
+            <li>· PostgreSQL + Docker Compose</li>
+            <li>· JUnit 5, Mockito</li>
+            <li>· Swagger / OpenAPI</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Arquitectura</h4>
+          <ul class="contact-list">
+            <li>· Controladores REST finos, sin lógica de negocio.</li>
+            <li>· Casos de uso / servicios de aplicación explícitos.</li>
+            <li>· Dominio separado de infraestructura.</li>
+            <li>· Repositorios como interfaces, implementación con JPA.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact-separator"></div>
+
+    <!-- APRENDIZAJES -->
+    <section class="section card">
+      <h3 class="section-title">Retos & aprendizajes</h3>
+      <p class="section-subtitle">Lo que más me ha hecho pensar.</p>
+
+      <ul class="workflow-list">
+        <li>
+          <h4>Equilibrio entre simple y flexible</h4>
+          <p>No sobrediseñar, pero tampoco quedarse en un CRUD plano imposible de extender.</p>
+        </li>
+        <li>
+          <h4>No mezclar dominio con infraestructura</h4>
+          <p>Mover validaciones al dominio para poder probarlas con tests sin arrancar todo Spring.</p>
+        </li>
+        <li>
+          <h4>Diseñar para mi “yo” del futuro</h4>
+          <p>Clases, métodos y tests pensados para entender el comportamiento en unos meses sin sufrir.</p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="contact-separator"></div>
+
+    <!-- SIGUIENTES PASOS -->
+    <section class="section card">
+      <h3 class="section-title">Siguientes pasos</h3>
+      <p class="section-subtitle">Ideas de evolución.</p>
+
+      <ul class="contact-list">
+        <li>· Autenticación real con JWT y roles básicos.</li>
+        <li>· Endpoints de reportes agregados por categoría y rango de fechas.</li>
+        <li>· Filtros avanzados en listados.</li>
+        <li>· Métricas básicas y health checks.</li>
+      </ul>
+
+      <div class="actions mt-14">
+        <a class="btn primary btn-real" href="index.html">← Volver al portfolio</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-main">
+          © <span id="year"></span> · Jose González Quevedo
+        </div>
+        <div class="footer-tagline">
+          Backend · Java · TDD · APIs · Mucho café ☕
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-social">
+          <a href="https://github.com/JosseGonnza" target="_blank" rel="noreferrer noopener">GitHub</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://www.linkedin.com/in/jossegonnza" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
