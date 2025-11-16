@@ -378,6 +378,46 @@
   background: var(--brand);
 }
 
+/* Botón destacado: base igual que cualquier .btn.primary */
+.btn.primary.btn-highlight {
+  position: relative;
+  z-index: 0;
+}
+
+/* Aro animado por detrás del botón */
+.btn.primary.btn-highlight::before {
+  content: "";
+  position: absolute;
+  inset: -2px;               /* halo un pelín más grande */
+  border-radius: inherit;
+  background: linear-gradient(
+    130deg,
+    #b26bff,
+    #8b6cff,
+    #6a4cff,
+    #5b6bff,
+    #b26bff
+  );
+  background-size: 260% 260%;
+  opacity: 0;                /* apagado por defecto */
+  filter: blur(0.5px);       /* halo suave */
+  z-index: -1;               /* por detrás del botón */
+  transition: opacity .25s ease;
+}
+
+/* En hover se enciende y se anima el gradiente */
+.btn.primary.btn-highlight:hover::before {
+  opacity: 1;
+  animation: btnBorderFlow 2.5s linear infinite;
+}
+
+/* Animación del gradiente */
+@keyframes btnBorderFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* ===== Mobile refinements ≤600px ===== */
 @media (max-width: 600px) {
 
