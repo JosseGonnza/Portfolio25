@@ -14,8 +14,13 @@ jobs:
       - name: Checkout del repositorio
         uses: actions/checkout@v4
 
-      - name: Mostrar contenido del proyecto
-        run: |
-          echo "✅ CI ejecutándose correctamente"
-          echo "📂 Listado de archivos:"
-          ls -R
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar chequeos
+        run: npm run check

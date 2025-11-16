@@ -1,0 +1,10 @@
+{
+  "name": "portfolio25",
+  "version": "1.0.0",
+  "description": "Personal portfolio of Jose González · Backend Developer",
+  "scripts": {
+    "check": "echo \"✔️ Portfolio structure OK\""
+  },
+  "author": "Jose M. González",
+  "license": "MIT"
+}
