@@ -1,0 +1,21 @@
+name: CI - Portfolio
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-portfolio:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar contenido del proyecto
+        run: |
+          echo "✅ CI ejecutándose correctamente"
+          echo "📂 Listado de archivos:"
+          ls -R
