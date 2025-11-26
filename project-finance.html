@@ -43,7 +43,7 @@
       </div>
 
       <div class="actions">
-        <a class="btn primary" href="index.html">← Volver</a>
+        <a class="btn" href="index.html">← Volver</a>
         <button id="themeToggle" class="btn primary" aria-label="Cambiar tema" aria-pressed="false">🌙</button>
       </div>
     </nav>
@@ -51,124 +51,218 @@
 
   <main id="content" class="container">
 
-    <!-- HERO -->
+    <!-- HERO / RESUMEN -->
     <section class="section card">
+      <p class="section-subtitle">Caso de estudio · Backend Java</p>
       <h2 class="section-title">Personal Finance Manager API</h2>
-      <p class="section-subtitle">
-        API backend para gestionar ingresos, gastos, categorías y reportes mensuales. Diseñada con
-        Spring Boot, arquitectura limpia y foco en pruebas y mantenibilidad.
+
+      <p class="mt-8">
+        Gestor de finanzas personales dockerizado, construido desde cero aplicando
+        <strong>Clean Architecture</strong>, <strong>CQRS</strong> y <strong>Domain-Driven Design</strong>.
+        Un backend sólido pensado para alimentar futuros frontends web o móviles.
       </p>
 
       <div class="badges mt-14">
-        <span class="badge">Java · Spring Boot</span>
-        <span class="badge">Arquitectura hexagonal</span>
-        <span class="badge">TDD · JUnit5</span>
-        <span class="badge">PostgreSQL · Docker</span>
+        <span class="badge">Java 21</span>
+        <span class="badge">Spring Boot 3.5.7</span>
+        <span class="badge">Clean Architecture</span>
+        <span class="badge">Hexagonal · CQRS</span>
+        <span class="badge">PostgreSQL 16</span>
+        <span class="badge">Docker Compose</span>
+        <span class="badge">JUnit5 · Mockito</span>
       </div>
 
-      <div class="actions mt-14">
-        <a class="btn primary btn-real" href="https://github.com/tu-usuario/personal-finance-manager" target="_blank" rel="noreferrer">
-          Ver repositorio
-        </a>
-        <a class="btn primary btn-real" href="https://tu-dominio.dev/finance-api-docs" target="_blank" rel="noreferrer">
-          Ver documentación / Swagger
-        </a>
+      <div class="grid two-cols mt-14">
+        <div>
+          <ul class="contact-list">
+            <li><strong>Rol:</strong> Backend Developer · Diseño de dominio & TDD</li>
+            <li><strong>Estado:</strong> En desarrollo (backend estable, frontend por implementar)</li>
+            <li><strong>Dominio:</strong> Cuentas, transacciones, categorías y reportes</li>
+          </ul>
+        </div>
+        <div class="actions" style="justify-content:flex-end; flex-wrap:wrap;">
+          <a class="btn primary btn-real btn-highlight"
+             href="https://github.com/JosseGonnza/personal-finance-manager"
+             target="_blank" rel="noreferrer noopener">
+            Ver repositorio
+          </a>
+          <a class="btn primary btn-real"
+             href="https://github.com/JosseGonnza/personal-finance-manager#readme"
+             target="_blank" rel="noreferrer noopener">
+            Leer README técnico
+          </a>
+        </div>
       </div>
     </section>
 
     <div class="contact-separator"></div>
 
-    <!-- CONTEXTO -->
+    <!-- CONTEXTO & PROBLEMA -->
     <section class="section card">
       <h3 class="section-title">Contexto & problema</h3>
       <p class="section-subtitle">¿Qué intenta resolver esta API?</p>
 
-      <p>
-        El objetivo es ayudar a una persona a entender en qué se le va el dinero cada mes: registrar ingresos
-        y gastos, agruparlos por categorías, definir presupuestos y generar reportes por periodo.
+      <p class="mt-8">
+        La mayoría de apps de finanzas personales priorizan el diseño visual y dejan el backend como
+        un monolito difícil de extender y casi imposible de testear. Aquí he hecho justo lo contrario:
+        <strong>empezar por un dominio fuerte y una arquitectura limpia</strong>.
       </p>
       <p>
-        Quería algo más que una lista de movimientos: un dominio que pueda crecer con nuevas reglas
-        sin reventar todo cada vez que se añade una funcionalidad.
+        El objetivo es ayudar a una persona a entender en qué se le va el dinero cada mes:
+        registrar ingresos y gastos, agruparlos por categorías, controlar el balance de cada cuenta
+        y preparar el terreno para presupuestos, reportes mensuales y dashboards.
       </p>
     </section>
 
     <div class="contact-separator"></div>
 
-    <!-- OBJETIVOS -->
+    <!-- CARACTERÍSTICAS PRINCIPALES -->
     <section class="section card">
-      <h3 class="section-title">Objetivos del proyecto</h3>
-      <p class="section-subtitle">Qué buscaba conseguir exactamente.</p>
+      <h3 class="section-title">Características principales</h3>
+      <p class="section-subtitle">Qué sabe hacer hoy el backend.</p>
 
-      <ul class="workflow-list">
-        <li>
-          <h4>1. Dominio claro y extensible</h4>
-          <p>Separar bien Movimiento, Categoría, Presupuesto y Usuario, evitando que todo sea solo “filas en una tabla”.</p>
-        </li>
-        <li>
-          <h4>2. Arquitectura que permita crecer</h4>
-          <p>Acercarme a una arquitectura hexagonal/clean: dominio aislado de controladores y base de datos.</p>
-        </li>
-        <li>
-          <h4>3. TDD en reglas clave</h4>
-          <p>Usar TDD en las reglas de negocio más delicadas para poder refactorizar sin miedo.</p>
-        </li>
-        <li>
-          <h4>4. Deploy local fácil</h4>
-          <p>Levantar API + PostgreSQL con Docker Compose para que cualquiera pueda probarlo rápido.</p>
-        </li>
+      <ul class="contact-list mt-8">
+        <li>· CRUD completo de <strong>Accounts</strong>, <strong>Transactions</strong> y <strong>Categories</strong>.</li>
+        <li>· Arquitectura limpia: combinación de <strong>Clean Architecture</strong> + <strong>Hexagonal</strong>.</li>
+        <li>· Separación clara entre comandos y consultas (<strong>CQRS</strong>).</li>
+        <li>· Dominio con invariantes: por ejemplo, no se puede borrar una categoría con transacciones asociadas.</li>
+        <li>· Persistencia real con <strong>PostgreSQL 16</strong> orquestado con Docker Compose.</li>
+        <li>· Pruebas automáticas con <strong>JUnit5 + Mockito</strong>.</li>
+        <li>· Documentación automática con <strong>Swagger / OpenAPI</strong>.</li>
+        <li>· Estructura preparada para añadir frontend y CI/CD sin romper el diseño del dominio.</li>
       </ul>
     </section>
 
     <div class="contact-separator"></div>
 
-    <!-- STACK -->
+    <!-- ARQUITECTURA -->
     <section class="section card">
-      <h3 class="section-title">Stack & arquitectura</h3>
-      <p class="section-subtitle">Tecnologías y decisiones técnicas.</p>
+      <h3 class="section-title">Arquitectura & diseño</h3>
+      <p class="section-subtitle">Cómo está organizado por dentro.</p>
 
-      <div class="grid two-cols">
+      <div class="grid two-cols mt-14">
         <div>
-          <h4>Stack técnico</h4>
-          <ul class="contact-list">
-            <li>· Java 17 / 21</li>
-            <li>· Spring Boot (Web, Data JPA)</li>
-            <li>· PostgreSQL + Docker Compose</li>
-            <li>· JUnit 5, Mockito</li>
-            <li>· Swagger / OpenAPI</li>
+          <h4>Capas principales</h4>
+          <ul class="contact-list mt-8">
+            <li>· <strong>API</strong>: controladores REST, DTOs, responses y filtros.</li>
+            <li>· <strong>Application</strong>: casos de uso <code>command</code> (escritura) y <code>query</code> (lectura).</li>
+            <li>· <strong>Domain</strong>: entidades, Value Objects como <code>Money</code>, reglas e invariantes.</li>
+            <li>· <strong>Infrastructure</strong>: adaptadores JPA y configuración de persistencia.</li>
           </ul>
         </div>
+
         <div>
-          <h4>Arquitectura</h4>
-          <ul class="contact-list">
-            <li>· Controladores REST finos, sin lógica de negocio.</li>
-            <li>· Casos de uso / servicios de aplicación explícitos.</li>
-            <li>· Dominio separado de infraestructura.</li>
-            <li>· Repositorios como interfaces, implementación con JPA.</li>
-          </ul>
+          <h4>Flujo simplificado</h4>
+          <div class="code mt-8">
+            <pre>
+[ REST Controllers ]
+        |
+        |   Validan → Mapean DTOs → Delegan
+        v
+[ Command Use Cases ]   [ Query Use Cases ]
+        |                      |
+        |______________________|
+                    |
+              [ Domain Layer ]
+  Entities, Value Objects (Money), reglas
+                    |
+              [ JPA Adapters ]
+        Repositorios, mapeo ORM
+                    |
+             [ PostgreSQL 16 ]</pre>
+          </div>
         </div>
       </div>
     </section>
 
     <div class="contact-separator"></div>
 
-    <!-- APRENDIZAJES -->
+    <!-- DOMINIO & REGLAS -->
+    <section class="section card">
+      <h3 class="section-title">Dominio & reglas de negocio</h3>
+      <p class="section-subtitle">Más allá del típico CRUD plano.</p>
+
+      <p class="mt-8">
+        El foco del proyecto es tener un dominio que exprese claramente las reglas de negocio y
+        evite estados imposibles. Algunos ejemplos:
+      </p>
+
+      <ul class="contact-list mt-8">
+        <li>· <strong>Category</strong> no puede borrarse si tiene <strong>Transactions</strong> asociadas.</li>
+        <li>· Cada <strong>Transaction</strong> actualiza el balance de la <strong>Account</strong> correspondiente.</li>
+        <li>· <strong>Money</strong> se modela como Value Object seguro (sin floats) para evitar errores de precisión.</li>
+      </ul>
+    </section>
+
+    <div class="contact-separator"></div>
+
+    <!-- STACK & TECNOLOGÍAS -->
+    <section class="section card">
+      <h3 class="section-title">Stack & herramientas</h3>
+      <p class="section-subtitle">Tecnologías que uso en el proyecto.</p>
+
+      <div class="badges mt-14">
+        <span class="badge">Java 21</span>
+        <span class="badge">Spring Boot 3.5.7</span>
+        <span class="badge">Spring Data JPA</span>
+        <span class="badge">PostgreSQL 16</span>
+        <span class="badge">Docker · Docker Compose</span>
+        <span class="badge">JUnit5</span>
+        <span class="badge">Mockito</span>
+        <span class="badge">SpringDoc OpenAPI</span>
+        <span class="badge">Clean Architecture</span>
+        <span class="badge">CQRS</span>
+        <span class="badge">Hexagonal</span>
+      </div>
+    </section>
+
+    <div class="contact-separator"></div>
+
+    <!-- CÓMO LEVANTAR EL PROYECTO -->
+    <section class="section card">
+      <h3 class="section-title">Cómo levantar el proyecto</h3>
+      <p class="section-subtitle">Pasos rápidos para probarlo en local.</p>
+
+      <h4 class="mt-14">Opción 1 · Todo con Docker</h4>
+      <p>Levanta el backend y la base de datos de una sola vez:</p>
+      <div class="code mt-8">
+        <pre>docker compose up -d</pre>
+      </div>
+
+      <h4 class="mt-14">Opción 2 · Ejecutar solo el backend</h4>
+      <div class="code mt-8">
+        <pre>cd backend
+mvn spring-boot:run</pre>
+      </div>
+
+      <p class="mt-8">
+        Una vez levantado, la API expone la documentación en:
+      </p>
+      <ul class="contact-list mt-8">
+        <li>· Swagger UI: <code>http://localhost:8080/swagger-ui.html</code></li>
+        <li>· OpenAPI docs: <code>http://localhost:8080/v3/api-docs</code></li>
+      </ul>
+    </section>
+
+    <div class="contact-separator"></div>
+
+    <!-- RETOS & APRENDIZAJES -->
     <section class="section card">
       <h3 class="section-title">Retos & aprendizajes</h3>
       <p class="section-subtitle">Lo que más me ha hecho pensar.</p>
 
-      <ul class="workflow-list">
+      <ul class="contact-list mt-8">
         <li>
-          <h4>Equilibrio entre simple y flexible</h4>
-          <p>No sobrediseñar, pero tampoco quedarse en un CRUD plano imposible de extender.</p>
+          · <strong>Equilibrio entre simple y flexible</strong>:
+          evitar sobrediseñar, pero también huir del CRUD plano imposible de extender.
         </li>
         <li>
-          <h4>No mezclar dominio con infraestructura</h4>
-          <p>Mover validaciones al dominio para poder probarlas con tests sin arrancar todo Spring.</p>
+          · <strong>Dominar la separación de capas</strong>:
+          mover validaciones al dominio para poder probar reglas sin arrancar todo Spring.
         </li>
         <li>
-          <h4>Diseñar para mi “yo” del futuro</h4>
-          <p>Clases, métodos y tests pensados para entender el comportamiento en unos meses sin sufrir.</p>
+          · <strong>Diseñar pensando en mi “yo” del futuro</strong>:
+          nombres claros, tests que cuentan una historia y una estructura que aguante nuevas features.
         </li>
       </ul>
     </section>
@@ -178,17 +272,26 @@
     <!-- SIGUIENTES PASOS -->
     <section class="section card">
       <h3 class="section-title">Siguientes pasos</h3>
-      <p class="section-subtitle">Ideas de evolución.</p>
+      <p class="section-subtitle">Hacia dónde quiero llevar este proyecto.</p>
 
-      <ul class="contact-list">
-        <li>· Autenticación real con JWT y roles básicos.</li>
-        <li>· Endpoints de reportes agregados por categoría y rango de fechas.</li>
-        <li>· Filtros avanzados en listados.</li>
-        <li>· Métricas básicas y health checks.</li>
+      <ul class="contact-list mt-8">
+        <li>· Dashboard con estadísticas e insights de ingresos/gastos.</li>
+        <li>· Análisis mensual automático y reportes agregados.</li>
+        <li>· Pipeline CI/CD con GitHub Actions.</li>
+        <li>· Añadir <code>frontend/</code> con React o Next.js consumiendo esta API.</li>
+        <li>· Autenticación JWT y multiusuario.</li>
       </ul>
 
       <div class="actions mt-14">
-        <a class="btn primary btn-real" href="index.html">← Volver al portfolio</a>
+        <a class="btn primary btn-real btn-highlight"
+           href="https://github.com/JosseGonnza/personal-finance-manager"
+           target="_blank" rel="noreferrer noopener">
+          Explorar el código en GitHub
+        </a>
+        <a class="btn"
+           href="index.html">
+          ← Volver al portfolio
+        </a>
       </div>
     </section>
 
