@@ -471,3 +471,248 @@
     color: var(--muted);
   }
 }
+
+/* ===== Case study layout ===== */
+.case-layout {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+/* HERO case: 2 columnas en desktop */
+.case-hero {
+  display: grid;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.case-hero-main {
+  max-width: 640px;
+}
+
+.case-hero-title {
+  margin: 4px 0 8px;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.section-eyebrow {
+  margin: 0;
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: .9;
+}
+
+/* Meta card derecha */
+.case-hero-meta {
+  width: 100%;
+}
+
+.case-meta-card {
+  background: color-mix(in oklab, var(--bg-soft) 84%, #000 16%);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 14px 14px 16px;
+  font-size: .9rem;
+}
+
+:root.light .case-meta-card {
+  background: color-mix(in oklab, var(--bg-soft) 92%, #ffffff 8%);
+}
+
+.case-meta-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.case-meta-label {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+}
+
+.case-meta-value {
+  font-size: .9rem;
+}
+
+/* Pills */
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill,
+.pill-outline,
+.pill-soft {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: .8rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--brand) 18%, var(--bg-soft) 82%);
+}
+
+.pill-soft {
+  border: 1px solid color-mix(in oklab, var(--brand) 35%, transparent);
+  background: color-mix(in oklab, var(--brand-2) 42%, var(--bg-soft) 58%);
+  color: var(--txt);
+}
+
+.pill-outline {
+  border: 1px solid var(--brand);
+  background: transparent;
+  color: var(--brand-2);
+}
+
+/* Stats / highlights */
+.case-stats {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+@media (min-width: 700px) {
+  .case-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.stat-card {
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--bg-soft) 86%, #000 14%);
+  padding: 12px 12px 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+
+:root.light .stat-card {
+  background: color-mix(in oklab, var(--bg-soft) 94%, #ffffff 6%);
+}
+
+.stat-label {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+.stat-note {
+  margin: 4px 0 0;
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+/* Callout */
+.callout {
+  border-radius: 14px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in oklab, var(--brand) 40%, transparent);
+  background: color-mix(in oklab, var(--brand) 12%, var(--bg-soft) 88%);
+  font-size: .9rem;
+}
+
+/* Paso a paso (setup) */
+.step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid var(--brand-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  font-weight: 600;
+  background: color-mix(in oklab, var(--brand) 40%, var(--bg-soft) 60%);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand) 14%, transparent);
+}
+
+.step-body h4 {
+  margin: 0 0 4px;
+  font-size: .95rem;
+}
+
+/* Responsivo case hero */
+@media (min-width: 900px) {
+  .case-hero {
+    grid-template-columns: minmax(0, 2.1fr) minmax(260px, 1.1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .case-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .case-meta-card {
+    padding: 12px;
+  }
+
+  .case-hero-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* ===== Sección libre de stats (sin card) ===== */
+.case-stats-wrapper {
+  padding: 28px 0;
+  margin-bottom: 36px;
+}
+
+/* Títulos centrados (opcional, pero queda brutal) */
+.case-stats-wrapper .section-eyebrow {
+  text-align: left;
+}
+
+.case-stats-wrapper .section-title {
+  margin-bottom: 18px;
+}
+
+/* Hacemos que los stat-cards respiren igual que dentro de la card */
+.case-stats-wrapper .case-stats {
+  margin-top: 18px;
+}
+
+/* Si quieres que los stat-cards sean MÁS protagonistas */
+.case-stats-wrapper .stat-card {
+  background: color-mix(in oklab, var(--bg-soft) 75%, #000 25%);
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+  padding: 16px 16px 18px;
+}
+
+:root.light .case-stats-wrapper .stat-card {
+  background: color-mix(in oklab, var(--bg-soft) 92%, #ffffff 8%);
+}
+
