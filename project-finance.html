@@ -186,7 +186,7 @@
     <p></p>
     <p class="section-subtitle">Cómo está organizado por dentro.</p>
 
-    <div class="grid two-cols mt-14">
+    <div class="mt-14">
       <div>
         <h4>Capas principales</h4>
         <ul class="contact-list mt-8">
@@ -203,25 +203,6 @@
           <li>· <strong>Money</strong> se modela como Value Object, evitando problemas de precisión.</li>
         </ul>
       </div>
-
-      <div>
-        <h4>Flujo simplificado</h4>
-        <div class="code mt-8">
-          <pre>[ REST Controllers ]
-        |
-        v
-[ Commands / Queries ]
-        |
-        v
-[ Domain Layer ]
-  Entities &amp; Value Objects
-        |
-        v
-[ JPA Adapters ]
-        |
-        v
-[ PostgreSQL 16 ]</pre>
-        </div>
 
         <h4 class="mt-14">Decisiones de diseño</h4>
         <ul class="contact-list mt-8">
@@ -272,7 +253,7 @@
           <h4>Levantar todo con Docker</h4>
           <p>Backend + base de datos con un solo comando:</p>
           <div class="code mt-8">
-            <pre>docker compose up -d</pre>
+            <pre>docker-compose up -d</pre>
           </div>
         </div>
       </li>
